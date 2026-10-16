@@ -1,69 +1,246 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+import Navbar from "@/components/lumenis/Navbar";
+import Hero from "@/components/lumenis/Hero";
+import About from "@/components/lumenis/About";
+import Projects from "@/components/lumenis/Projects";
+import Services from "@/components/lumenis/Services";
+import Benchmark from "@/components/lumenis/Benchmark";
+import Testimonials from "@/components/lumenis/Testimonials";
+import Footer from "@/components/lumenis/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Lenis smooth scroll
+    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    lenis.on("scroll", ScrollTrigger.update);
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    if (reduce) {
+      gsap.set(".logo-hero-text, .animate-on-load, .fade-in-on-scroll, .partner, .split-word", {
+        clearProps: "all",
+        opacity: 1,
+        y: 0,
+      });
+      return () => lenis.destroy();
+    }
+
+    // Show intro overlay before animation starts
+    document.getElementById("intro-overlay")?.classList.add("intro-active");
+
+    const ctx = gsap.context(() => {
+      /* ---------- intro timeline ---------- */
+      const intro = gsap.timeline({
+        defaults: { ease: "power4.out" },
+        onComplete: () => {
+          // Remove intro elements after animation completes
+          gsap.set(".intro-fade, .intro-reveal, .intro-wipe, .intro-cover, .intro-cover-pair", {
+            display: "none",
+          });
+        },
+      });
+
+      // Width reveal: 0% -> 100% (black wipes across)
+      intro.fromTo(
+        ".intro-reveal",
+        { width: "0%" },
+        { width: "100%", duration: 1.21, ease: "power4.inOut" },
+        0.3
+      );
+
+      // Height wipe: 100% -> 0px (black wipes up)
+      intro.fromTo(".intro-wipe", { height: "100%" }, { height: "0px", duration: 0.5 }, 1.5);
+
+      // Cover shrink: 100% -> 45% width, 100% -> 55% height
+      intro.fromTo(
+        ".intro-cover",
+        { width: "100%", height: "100%" },
+        { width: "45%", height: "55%", duration: 0.8, ease: "power3.out" },
+        3.06
+      );
+
+      // Paired tween: 104% -> 45% / 104% -> 55%
+      intro.fromTo(
+        ".intro-cover-pair",
+        { x: "104%", y: "104%" },
+        { x: "45%", y: "55%", duration: 0.8, ease: "power3.out" },
+        2.4
+      );
+
+      // Layer fade: 100% -> 0% (white cover fades to reveal content)
+      intro.to(".intro-fade", { opacity: 0, duration: 0.5 }, 1.5);
+
+      /* ---------- hero text ---------- */
+      gsap.fromTo(
+        ".logo-hero-text",
+        { y: 120, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power4.out", delay: 0.05 }
+      );
+
+      /* ---------- animate-on-load ---------- */
+      gsap.fromTo(
+        ".animate-on-load",
+        { y: 65, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.3,
+          stagger: 0.35,
+        }
+      );
+
+      /* ---------- navbar ---------- */
+      gsap.fromTo(".navbar", { y: "-100%" }, { y: 0, duration: 0.5, delay: 0.94 });
+      gsap.fromTo(
+        ".navbar",
+        { backgroundColor: "rgba(255,255,255,0)" },
+        { backgroundColor: "rgba(255,255,255,1)", duration: 0.5, delay: 0.94 }
+      );
+      gsap.fromTo(
+        ".nav-link",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.2, delay: 1.16, stagger: 0.2 }
+      );
+
+      /* ---------- scroll reveals ---------- */
+      gsap.utils.toArray<HTMLElement>(".fade-in-on-scroll").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%" },
+          }
+        );
+      });
+
+      /* ---------- partners ---------- */
+      gsap.fromTo(
+        ".partner",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power4.out",
+          stagger: 0.5,
+          scrollTrigger: { trigger: ".partner-grid", start: "top 80%" },
+        }
+      );
+
+      /* ---------- split text scrub ---------- */
+      gsap.utils.toArray<HTMLElement>(".split-text").forEach((el) => {
+        const words = el.textContent?.trim().split(/\s+/).filter(Boolean) ?? [];
+        el.innerHTML = words
+          .map((w, i) => `<span class="split-word" style="transition-delay:${i * 50}ms">${w}</span>`)
+          .join(" ");
+        const wordEls = el.querySelectorAll(".split-word");
+        wordEls.forEach((w) => {
+          gsap.fromTo(
+            w,
+            { opacity: 0.2 },
+            {
+              opacity: 1,
+              duration: 0.05,
+              stagger: 0.5,
+              ease: "none",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: true,
+              },
+            }
+          );
+        });
+      });
+
+      /* ---------- project rows ---------- */
+      gsap.utils.toArray<HTMLElement>(".project-list-item").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%" },
+          }
+        );
+      });
+
+      /* ---------- testimonial cards ---------- */
+      gsap.fromTo(
+        ".testimonial-item",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: { trigger: ".testimonial-holder", start: "top 80%" },
+        }
+      );
+    }, mainRef);
+
+    // Hard fallback: remove intro overlay after 6 seconds max
+    const fallbackTimer = setTimeout(() => {
+      gsap.set(".intro-fade, .intro-reveal, .intro-wipe, .intro-cover, .intro-cover-pair", {
+        display: "none",
+      });
+    }, 6000);
+
+    return () => {
+      clearTimeout(fallbackTimer);
+      ctx.revert();
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div ref={mainRef} className="relative">
+      {/* Intro overlay — hidden by default via CSS, shown only when JS runs */}
+      <div
+        className="fixed inset-0 z-[100] pointer-events-none"
+        id="intro-overlay"
+        aria-hidden="true"
+      >
+        <div className="intro-fade absolute inset-0 bg-white" />
+        <div className="intro-reveal absolute top-0 left-0 h-full bg-black" style={{ width: 0 }} />
+        <div className="intro-wipe absolute bottom-0 left-0 w-full bg-black" />
+        <div className="intro-cover absolute top-0 left-0 bg-white" />
+        <div className="intro-cover-pair absolute top-0 left-0 w-1 h-1 bg-black" />
+      </div>
+
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Services />
+      <Benchmark />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }
