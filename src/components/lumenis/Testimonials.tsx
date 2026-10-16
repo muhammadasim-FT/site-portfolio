@@ -1,58 +1,58 @@
 const testimonials = [
   {
     quote:
-      "We sent them a 14-page brief, 73 moodboard images, and one chaotic voice note from our founder. They came back with exactly what we wanted... somehow. Still not sure how they do it, but we're fans.",
-    name: "Head of Vibes",
-    company: "BananaWave Inc.",
+      "We handed them a tangled monolith and a two-page brief. They came back with a clean service architecture, clear documentation, and a migration path that actually worked. Still not sure how they do it, but we're fans.",
+    name: "Engineering Manager",
+    company: "Platform Team",
     avatar: "lumenis-avatar-1",
   },
   {
     quote:
-      "Not only did they design something beautiful — they understood our weird inside jokes, nailed the tone, and even picked better font pairings than our own team (don't tell Marketing). 12/10 would collab again.",
-    name: "CTA Strategist",
-    company: "BananaWave Inc.",
+      "Not only did they write clean, well-tested code — they understood the edge cases we hadn't thought of, nailed the API design, and even spotted a performance bug in our existing stack. 12/10 would work with again.",
+    name: "Senior Developer",
+    company: "Backend Team",
     avatar: "lumenis-avatar-2",
   },
   {
     quote:
-      "Working with them felt like therapy — but for branding. We laughed, we cried (a little), and now we have a website that makes people go 'damn, who made this?' every time. Worth every pixel.",
-    name: "Dana K.",
-    company: "BananaWave Inc.",
+      "Working with them felt like a masterclass in software design. We laughed, we refactored (a little), and now we have a codebase that new engineers can actually understand. Worth every hour.",
+    name: "Tech Lead",
+    company: "Product Engineering",
     avatar: "lumenis-avatar-3",
   },
   {
     quote:
-      "We asked for a clean site. They gave us clean, clever, AND cool. They even made our CEO say 'wow' — which he usually only says about coffee.",
-    name: "Head of Inova",
-    company: "BananaWave Inc.",
+      "We asked for a simple REST API. They gave us clean, well-documented, AND scalable. They even got our team lead to say 'this is exactly what I wanted' — which they usually only say about coffee.",
+    name: "Head of Platform",
+    company: "Infrastructure",
     avatar: "lumenis-avatar-4",
   },
   {
     quote:
-      "They took our 'just make it pop' request and turned it into a design system. Wizards? Possibly. Designers? Absolutely. Chaos-to-clarity experts.",
-    name: "Head of Mid",
-    company: "BananaWave Inc.",
+      "They took our 'just make it faster' request and turned it into a proper caching strategy and query optimization plan. Wizards? Possibly. Engineers? Absolutely. Performance experts.",
+    name: "Head of Performance",
+    company: "Web Team",
     avatar: "lumenis-avatar-5",
   },
   {
     quote:
-      "Displayed is the testimonial website page as well as the individual testimonial card.",
-    name: "Head of Blend",
-    company: "BananaWave Inc.",
+      "They took our 'just make it work' deployment process and turned it into a proper CI/CD pipeline. Fewer rollbacks, fewer late nights, fewer 'works on my machine' excuses.",
+    name: "DevOps Lead",
+    company: "Platform Team",
     avatar: "lumenis-avatar-6",
   },
   {
     quote:
-      "We gave them absolutely no direction, two contradictory emails, and one half-baked Figma wireframe — and somehow they made something stunning. They're either magic or just very patient.",
-    name: "Head of Trock",
-    company: "BananaWave Inc.",
+      "We gave them absolutely no direction, two contradictory tickets, and one half-faked architecture diagram — and somehow they made something clean and maintainable. They're either magic or just very patient.",
+    name: "Engineering Manager",
+    company: "Full-Stack Team",
     avatar: "lumenis-avatar-7",
   },
   {
     quote:
-      "They understood our vibe better than we did. I'm pretty sure they time-traveled into the future, saw what we wanted, and came back to build it. Hire them before Netflix does.",
-    name: "Head of FAC",
-    company: "BananaWave Inc.",
+      "They understood our system's constraints better than we did. I'm pretty sure they read every line of our legacy code, mapped the dependencies, and came back with a plan. Hire them before a competitor does.",
+    name: "CTO",
+    company: "Startup",
     avatar: "lumenis-avatar-8",
   },
 ];
@@ -65,7 +65,7 @@ export default function Testimonials() {
           <div className="section-inside">
             <div className="content">
               <div className="center-text-holder text-center">
-                <p className="paragraph-title">who's talking about us</p>
+                <p className="paragraph-title">what collaborators say</p>
               </div>
 
               {/* Repeating logo animation */}

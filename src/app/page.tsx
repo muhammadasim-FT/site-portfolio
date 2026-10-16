@@ -8,8 +8,10 @@ import Navbar from "@/components/lumenis/Navbar";
 import Hero from "@/components/lumenis/Hero";
 import About from "@/components/lumenis/About";
 import Projects from "@/components/lumenis/Projects";
+import MomentsGallery from "@/components/lumenis/MomentsGallery";
 import Services from "@/components/lumenis/Services";
 import Benchmark from "@/components/lumenis/Benchmark";
+import ClientReviews from "@/components/lumenis/ClientReviews";
 import Testimonials from "@/components/lumenis/Testimonials";
 import Footer from "@/components/lumenis/Footer";
 
@@ -39,22 +41,17 @@ export default function Home() {
       return () => lenis.destroy();
     }
 
-    // Show intro overlay before animation starts
-    document.getElementById("intro-overlay")?.classList.add("intro-active");
-
     const ctx = gsap.context(() => {
       /* ---------- intro timeline ---------- */
       const intro = gsap.timeline({
         defaults: { ease: "power4.out" },
         onComplete: () => {
-          // Remove intro elements after animation completes
           gsap.set(".intro-fade, .intro-reveal, .intro-wipe, .intro-cover, .intro-cover-pair", {
             display: "none",
           });
         },
       });
 
-      // Width reveal: 0% -> 100% (black wipes across)
       intro.fromTo(
         ".intro-reveal",
         { width: "0%" },
@@ -62,10 +59,8 @@ export default function Home() {
         0.3
       );
 
-      // Height wipe: 100% -> 0px (black wipes up)
       intro.fromTo(".intro-wipe", { height: "100%" }, { height: "0px", duration: 0.5 }, 1.5);
 
-      // Cover shrink: 100% -> 45% width, 100% -> 55% height
       intro.fromTo(
         ".intro-cover",
         { width: "100%", height: "100%" },
@@ -73,7 +68,6 @@ export default function Home() {
         3.06
       );
 
-      // Paired tween: 104% -> 45% / 104% -> 55%
       intro.fromTo(
         ".intro-cover-pair",
         { x: "104%", y: "104%" },
@@ -81,7 +75,6 @@ export default function Home() {
         2.4
       );
 
-      // Layer fade: 100% -> 0% (white cover fades to reveal content)
       intro.to(".intro-fade", { opacity: 0, duration: 0.5 }, 1.5);
 
       /* ---------- hero text ---------- */
@@ -234,13 +227,15 @@ export default function Home() {
       </div>
 
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Services />
-      <Benchmark />
-      <Testimonials />
-      <Footer />
+      <div id="hero-section"><Hero /></div>
+      <div id="about-section"><About /></div>
+      <div id="projects-section"><Projects /></div>
+      <div id="gallery-section"><MomentsGallery /></div>
+      <div id="services-section"><Services /></div>
+      <div id="benchmark-section"><Benchmark /></div>
+      <div id="reviews-section"><ClientReviews /></div>
+      <div id="testimonials-section"><Testimonials /></div>
+      <div id="contact-section"><Footer /></div>
     </div>
   );
 }

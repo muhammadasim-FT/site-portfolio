@@ -1,8 +1,8 @@
 const services = [
-  { name: "Digital Media", seed: "lumenis-service-media", alt: "Person holding smartphone at sunset" },
-  { name: "Branding", seed: "lumenis-service-branding", alt: "Hand holding coffee cup with droplets" },
-  { name: "Art Direction", seed: "lumenis-service-art", alt: "Man in pinstripe blazer sitting in car" },
-  { name: "Webflow", seed: "lumenis-service-webflow", alt: "Laptop on grass displaying app screen" },
+  { name: "Backend Systems", seed: "lumenis-service-media", alt: "Server architecture diagram" },
+  { name: "Frontend Interfaces", seed: "lumenis-service-branding", alt: "Code on a screen" },
+  { name: "Cloud Infrastructure", seed: "lumenis-service-art", alt: "Data center servers" },
+  { name: "API Development", seed: "lumenis-service-webflow", alt: "Laptop with API docs" },
 ];
 
 export default function Services() {
@@ -14,13 +14,13 @@ export default function Services() {
             <div className="grid-title">
               <div className="grid-title-container">
                 <div className="fade-in-on-scroll">
-                  <p className="paragraph-title">Services we can help</p>
+                  <p className="paragraph-title">What I do</p>
                 </div>
                 <div className="title-animation mt-4">
                   <div className="heading-holder l">
                     <div className="fade-in-on-scroll">
                       <h1 className="h4-style">
-                        We offer studio shaping story-driven Digital campaigns .
+                        I build end-to-end software solutions.
                       </h1>
                     </div>
                   </div>
@@ -28,8 +28,8 @@ export default function Services() {
               </div>
               <div className="fade-in-on-scroll mt-6">
                 <p className="max-w-lg text-[15px] leading-relaxed text-neutral-600">
-                  Lorem ipsum dolor sit amet consectetur. Ullamcorper amet diam duis lacus ut
-                  tincidunt vel mauris. Elementum tortor elit nisi viverra purus. Quam lacus;
+                  From database schema design to deployment pipelines — I handle the full lifecycle
+                  of software development.
                 </p>
               </div>
             </div>
@@ -42,7 +42,7 @@ export default function Services() {
               <div className="services">
                 <div className="services-text-holder">
                   <div className="services-title">
-                    <p className="paragraph-title white-text">Why work with us</p>
+                    <p className="paragraph-title white-text">Core competencies</p>
                   </div>
                   <div className="services-text-container">
                     {services.map((s) => (
@@ -53,7 +53,7 @@ export default function Services() {
                   </div>
                 </div>
                 <div className="yellow-box spacings">
-                  <p className="paragraph-title">Services</p>
+                  <p className="paragraph-title">Expertise</p>
                 </div>
               </div>
 

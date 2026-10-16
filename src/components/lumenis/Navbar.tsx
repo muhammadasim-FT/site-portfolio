@@ -1,11 +1,9 @@
-import Image from "next/image";
-
 const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/work" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "#hero-section" },
+  { label: "About", href: "#about-section" },
+  { label: "Projects", href: "#projects-section" },
+  { label: "Gallery", href: "#gallery-section" },
+  { label: "Stack", href: "#services-section" },
 ];
 
 export default function Navbar() {
@@ -14,7 +12,7 @@ export default function Navbar() {
       <div className="container">
         <div className="navbar flex items-center justify-between py-5">
           {/* Brand */}
-          <a href="/" className="brand flex items-center gap-2" aria-label="Mehfil home">
+          <a href="#hero-section" className="brand flex items-center gap-2" aria-label="Mehfil home">
             <span
               className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white"
               style={{ fontFamily: "var(--font-oswald)" }}

@@ -1,20 +1,20 @@
-const services = ["DIGITAL Media", "BRANDING", "ART DIRECTION", "WEB DEVELOPMENT"];
-const locations = ["Locations", "Los angeles", "London", "Milano"];
+const services = ["Full-Stack", "Cloud & DevOps", "API Design", "System Architecture"];
+const locations = ["Based in", "Los angeles", "London", "Milano"];
 const socials = [
-  { label: "instagram", href: "https://instagram.com" },
+  { label: "GitHub", href: "https://github.com" },
   { label: "Twitter", href: "https://x.com" },
   { label: "Linkedin", href: "https://linkedin.com" },
 ];
 
 const heroImages = [
-  { seed: "lumenis-hero-1", alt: "Modern transparent red chair with curved design" },
-  { seed: "lumenis-hero-2", alt: "Young person in bucket hat against white background" },
-  { seed: "lumenis-hero-3", alt: "Two women practicing yoga in a bright room" },
-  { seed: "lumenis-hero-4", alt: "Man wearing yellow sunglasses and white shirt" },
-  { seed: "lumenis-hero-5", alt: "Young man walking against orange background" },
-  { seed: "lumenis-hero-6", alt: "Close-up portrait of a young woman with freckles" },
-  { seed: "lumenis-hero-7", alt: "Man hitting a tennis ball on outdoor court" },
-  { seed: "lumenis-hero-8", alt: "Woman in cream suit walking on city street" },
+  { seed: "lumenis-hero-1", alt: "Server rack in a data center" },
+  { seed: "lumenis-hero-2", alt: "Lines of code on a screen" },
+  { seed: "lumenis-hero-3", alt: "Developer workspace with multiple monitors" },
+  { seed: "lumenis-hero-4", alt: "Cloud infrastructure diagram" },
+  { seed: "lumenis-hero-5", alt: "Code editor with dark theme" },
+  { seed: "lumenis-hero-6", alt: "Terminal window with build output" },
+  { seed: "lumenis-hero-7", alt: "Architecture whiteboard sketch" },
+  { seed: "lumenis-hero-8", alt: "Laptop on a desk with coffee" },
 ];
 
 export default function Hero() {
@@ -98,7 +98,7 @@ export default function Hero() {
             <div className="hero-holder">
               <div className="animate-on-load">
                 <h5 className="no-margins h5-style max-w-md">
-                  Creative studio crafting narrative-driven digital experiences for modern brands.
+                  Software engineer crafting reliable, scalable systems from database to interface.
                 </h5>
               </div>
             </div>
@@ -106,8 +106,8 @@ export default function Hero() {
             <div className="hero-paragraph-container">
               <div className="animate-on-load">
                 <p className="max-w-md text-[15px] leading-relaxed text-neutral-600">
-                  A production studio dedicated to shaping story-driven digital experiences that
-                  inspire, engage, and connect people with leading brands across the world.
+                  I design and build software that solves real problems — from low-level backend
+                  infrastructure to polished frontend experiences.
                 </p>
               </div>
 
@@ -115,8 +115,8 @@ export default function Hero() {
                 <div className="animate-on-load">
                   <a href="/contact" className="button">
                     <span className="button-text-holder">
-                      <span className="button-text">Book a Meeting</span>
-                      <span className="button-text">Book a Meeting</span>
+                      <span className="button-text">Get in Touch</span>
+                      <span className="button-text">Get in Touch</span>
                     </span>
                     <svg
                       className="button-icon"

@@ -7,19 +7,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const metrics = [
-  { stat: "1.2M", label: "API calls handled every minute" },
-  { stat: "50+", label: "Integrations available out of the box" },
-  { stat: "4.9", label: "Average rating from verified reviews" },
-  { stat: "12x", label: "Return on investment in year one" },
-  { stat: "-68%", label: "Fewer support tickets after rollout" },
-  { stat: "850K", label: "Events processed every day" },
-  { stat: "14 days", label: "From first commit to live deploy" },
+  { stat: "99.9%", label: "Uptime across deployed services" },
+  { stat: "50+", label: "APIs designed and shipped to production" },
+  { stat: "4.9", label: "Code review rating from collaborators" },
+  { stat: "12x", label: "Query performance improved after optimization" },
+  { stat: "-68%", label: "Reduction in infrastructure costs after migration" },
+  { stat: "850K", label: "Requests processed daily at peak" },
+  { stat: "14 days", label: "From idea to first production deploy" },
 ];
 
 export default function Benchmark() {
   const sectionRef = useRef<HTMLElement>(null);
   const statRef = useRef<HTMLSpanElement>(null);
-  const [activeIndex, setActiveIndex] = useState(3); // default to "12x"
+  const [activeIndex, setActiveIndex] = useState(3);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -80,8 +80,8 @@ export default function Benchmark() {
                 </span>
               </div>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">
-                Faster delivery than traditional development agencies, without
-                compromising on quality or craft.
+                Faster delivery than traditional development workflows, without
+                compromising on code quality or system reliability.
               </p>
             </div>
 

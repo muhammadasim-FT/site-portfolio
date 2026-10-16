@@ -1,39 +1,39 @@
 const projects = [
   {
-    id: "wine-dine",
-    title: "Wine Dine",
-    category: "( Trailer )",
+    id: "task-engine",
+    title: "Task Engine",
+    category: "( Full-Stack )",
     counter: "1",
     image: "lumenis-project-wine",
     mainImage: "lumenis-project-wine-main",
-    alt: "Autumn solitude cyclist",
+    alt: "Distributed task queue dashboard",
   },
   {
-    id: "lonely-car",
-    title: "Lonely Car",
-    category: "( Animation )",
+    id: "realtime-collar",
+    title: "Realtime Collar",
+    category: "( WebSocket )",
     counter: "2",
     image: "lumenis-project-car",
     mainImage: "lumenis-project-car-main",
-    alt: "Beachside gathering",
+    alt: "Live data streaming visualization",
   },
   {
-    id: "futuristic",
-    title: "Futuristic",
-    category: "( Movie )",
+    id: "query-layer",
+    title: "Query Layer",
+    category: "( API )",
     counter: "3",
     image: "lumenis-project-future",
     mainImage: "lumenis-project-future-main",
-    alt: "Man in vintage car",
+    alt: "GraphQL API explorer interface",
   },
   {
-    id: "drama-fabric",
-    title: "Drama Fabric",
-    category: "( Trailer )",
+    id: "pipeline",
+    title: "Pipeline",
+    category: "( DevOps )",
     counter: "4",
     image: "lumenis-project-drama",
     mainImage: "lumenis-project-drama-main",
-    alt: "Futuristic bike ride",
+    alt: "CI/CD pipeline status dashboard",
   },
 ];
 
@@ -51,15 +51,15 @@ export default function Projects() {
                 <div className="title-animation mt-4">
                   <div className="heading-holder">
                     <div className="fade-in-on-scroll">
-                      <h1 className="h4-style">Digital Experiences Selected Works.</h1>
+                      <h1 className="h4-style">Software I've Built.</h1>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="fade-in-on-scroll mt-6">
                 <p className="max-w-lg text-[15px] leading-relaxed text-neutral-600">
-                  Lorem ipsum dolor sit amet consectetur. Ullamcorper amet diam duis lacus ut
-                  tincidunt vel mauris. Elementum tortor elit nisi viverra purus. Quam lacus;
+                  A selection of systems I've designed, built, and deployed — from real-time
+                  data pipelines to full-stack web applications.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Projects() {
                             className="project-main-image"
                           />
                           <div className="discover">
-                            <p className="paragraph-title text-white">Discover More</p>
+                            <p className="paragraph-title text-white">View Project</p>
                           </div>
                         </div>
                       </div>
