@@ -12,6 +12,7 @@ import MomentsGallery from "@/components/lumenis/MomentsGallery";
 import Services from "@/components/lumenis/Services";
 import Benchmark from "@/components/lumenis/Benchmark";
 import ClientReviews from "@/components/lumenis/ClientReviews";
+import BookingCalendar from "@/components/lumenis/BookingCalendar";
 import Testimonials from "@/components/lumenis/Testimonials";
 import Footer from "@/components/lumenis/Footer";
 
@@ -234,6 +235,7 @@ export default function Home() {
       <div id="services-section"><Services /></div>
       <div id="benchmark-section"><Benchmark /></div>
       <div id="reviews-section"><ClientReviews /></div>
+      <div id="booking-section"><BookingCalendar /></div>
       <div id="testimonials-section"><Testimonials /></div>
       <div id="contact-section"><Footer /></div>
     </div>

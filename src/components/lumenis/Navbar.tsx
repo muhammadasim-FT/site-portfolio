@@ -1,5 +1,4 @@
 const links = [
-  { label: "Home", href: "#hero-section" },
   { label: "About", href: "#about-section" },
   { label: "Projects", href: "#projects-section" },
   { label: "Gallery", href: "#gallery-section" },
@@ -10,7 +9,7 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container">
-        <div className="navbar flex items-center justify-between py-5">
+        <div className="navbar bg-transparent! flex items-center justify-between py-5">
           {/* Brand */}
           <a href="#hero-section" className="brand flex items-center gap-2" aria-label="Mehfil home">
             <span
