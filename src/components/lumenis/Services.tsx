@@ -1,8 +1,32 @@
 const services = [
-  { name: "Backend Systems", seed: "lumenis-service-media", alt: "Server architecture diagram" },
-  { name: "Frontend Interfaces", seed: "lumenis-service-branding", alt: "Code on a screen" },
-  { name: "Cloud Infrastructure", seed: "lumenis-service-art", alt: "Data center servers" },
-  { name: "API Development", seed: "lumenis-service-webflow", alt: "Laptop with API docs" },
+  {
+    name: "Full-Stack Development",
+    image: "/assets/images/gallery/norms.jpg",
+    alt: "Full-stack development workspace",
+    description:
+      "End-to-end product development from database design to deployed application. React, Next.js, Node.js, TypeScript, PostgreSQL, Prisma, GraphQL, REST APIs, authentication, real-time features.",
+  },
+  {
+    name: "DevOps & Cloud Infrastructure",
+    image: "/assets/images/gallery/serviceflow.jpg",
+    alt: "Cloud infrastructure diagram",
+    description:
+      "Production-grade infrastructure on AWS/GCP. Kubernetes, Docker, Terraform, CI/CD pipelines, monitoring, logging, auto-scaling, disaster recovery, cost optimization.",
+  },
+  {
+    name: "AI & LLM Integration",
+    image: "/assets/images/gallery/saftai.jpg",
+    alt: "AI pipeline architecture",
+    description:
+      "Multi-agent systems, RAG pipelines, LLM fine-tuning, vector databases, prompt engineering, LangChain, OpenAI/Anthropic APIs, semantic search, document processing, automated workflows.",
+  },
+  {
+    name: "Web3 & Blockchain",
+    image: "/assets/images/gallery/launhpad.jpg",
+    alt: "Blockchain development",
+    description:
+      "Smart contracts (Solidity, Rust), DeFi protocols, NFT platforms, IDO launchpads, wallet integration, multi-chain deployment, IPFS, The Graph, Foundry, Hardhat, auditing.",
+  },
 ];
 
 export default function Services() {
@@ -29,7 +53,7 @@ export default function Services() {
               <div className="fade-in-on-scroll mt-6">
                 <p className="max-w-lg text-[15px] leading-relaxed text-neutral-600">
                   From database schema design to deployment pipelines — I handle the full lifecycle
-                  of software development.
+                  of software development across web2 and web3.
                 </p>
               </div>
             </div>
@@ -59,14 +83,16 @@ export default function Services() {
 
               <div className="services-images-holder">
                 {services.map((s) => (
-                  <div key={s.name} className="overflow-hidden rounded-lg">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`https://picsum.photos/seed/${s.seed}/600/600`}
-                      alt={s.alt}
-                      loading="lazy"
-                      className="services-images"
-                    />
+                  <div key={s.name} className="overflow-hidden">
+                    <div className="relative aspect-square bg-neutral-100">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={s.image}
+                        alt={s.alt}
+                        loading="lazy"
+                        className="services-images"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>

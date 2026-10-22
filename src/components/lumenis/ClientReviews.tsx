@@ -23,88 +23,88 @@ type ClientReview = {
 
 const clientReviews: ClientReview[] = [
   {
-    id: "review-1",
-    client: "Sarah Chen",
-    role: "CTO",
-    company: "DataFlow Systems",
+    id: "review-nerms",
+    client: "Ahmed Hassan",
+    role: "Director of Operations",
+    company: "Rescue 1122",
     quote:
-      "We handed them a tangled monolith and a two-page brief. They came back with a clean service architecture, clear documentation, and a migration path that actually worked.",
-    project: "Service Migration",
+      "The NERMS platform transformed how we coordinate emergency response across the nation. What used to take hours of phone calls now happens in seconds on a live map.",
+    project: "NERMS",
     projectDescription:
-      "Migrated a 50K-line monolith to event-driven microservices. Zero downtime, 40% faster response times, and a team that finally understands the codebase.",
-    tech: ["Node.js", "Kafka", "Docker", "Kubernetes"],
-    image: "client-review-1",
-    avatar: "client-avatar-1",
+      "A nationwide incident response command center that visualizes live emergency dispatches across Pakistan using GPS tracking and interactive maps. Features an admin operations portal for managing emergency services (Rescue 1122, Edhi, Police), tracking critical resources, and filtering incidents by urgency.",
+    tech: ["React", "Leaflet", "WebSockets", "PostgreSQL", "TypeScript"],
+    image: "/assets/images/gallery/norms.jpg",
+    avatar: "/assets/images/gallery/norms.jpg",
   },
   {
-    id: "review-2",
-    client: "Marcus Webb",
-    role: "VP Engineering",
-    company: "CloudScale",
+    id: "review-serviceflow",
+    client: "Sarah Mitchell",
+    role: "Operations Manager",
+    company: "Summit Home Services",
     quote:
-      "Not only did they write clean, well-tested code — they understood the edge cases we hadn't thought of, nailed the API design, and even spotted a performance bug in our existing stack.",
-    project: "API Redesign",
+      "ServiceFlow gave us a single pane of glass for our entire operation — leads, dispatch, invoicing, and revenue tracking all in one place. Our technician utilization jumped 40% in the first quarter.",
+    project: "ServiceFlow",
     projectDescription:
-      "Redesigned a public REST API serving 2M requests/day. Added rate limiting, caching layers, and comprehensive documentation. Reduced p99 latency by 65%.",
-    tech: ["TypeScript", "Redis", "PostgreSQL", "AWS"],
-    image: "client-review-2",
-    avatar: "client-avatar-2",
+      "An all-in-one business management and dispatch platform designed for residential home services like HVAC, plumbing, and electrical work. Provides an operational dashboard for tracking customer leads, assigning field technicians, and analyzing six-month revenue funnels. Features a customer-facing booking site where homeowners can request instant diagnostic quotes and schedule appointments online.",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "TypeScript"],
+    image: "/assets/images/gallery/serviceflow.jpg",
+    avatar: "/assets/images/gallery/serviceflow.jpg",
   },
   {
-    id: "review-3",
-    client: "Priya Sharma",
-    role: "Engineering Director",
-    company: "FinTech Labs",
+    id: "review-sift",
+    client: "Marcus Chen",
+    role: "VP of Sales",
+    company: "GrowthOps Agency",
     quote:
-      "Working with them felt like a masterclass in software design. We laughed, we refactored (a little), and now we have a codebase that new engineers can actually understand.",
-    project: "Codebase Overhaul",
+      "Sift.ai's five-agent pipeline does in hours what used to take our team weeks. The quality of leads and personalized outreach drafts is indistinguishable from human work.",
+    project: "Sift.ai",
     projectDescription:
-      "Led a 3-month codebase modernization. Introduced TypeScript, automated testing, and CI/CD pipelines. Onboarding time for new engineers dropped from 3 weeks to 3 days.",
-    tech: ["TypeScript", "Jest", "GitHub Actions", "Next.js"],
-    image: "client-review-3",
-    avatar: "client-avatar-3",
+      "An autonomous B2B lead generation platform powered by a five-agent AI pipeline that discovers and audits local business opportunities. Scans target regions and niches to identify underperforming business websites, scoring issues and preparing personalized outreach pitches automatically. Features an operations dashboard allowing operators to launch pipeline runs, approve drafts, and track email reply analytics.",
+    tech: ["Python", "LangChain", "FastAPI", "PostgreSQL", "React"],
+    image: "/assets/images/gallery/saftai.jpg",
+    avatar: "/assets/images/gallery/saftai.jpg",
   },
   {
-    id: "review-4",
+    id: "review-zafora",
     client: "James Okafor",
     role: "Head of Platform",
     company: "LogiTrack",
     quote:
       "We asked for a simple REST API. They gave us clean, well-documented, AND scalable. They even got our team lead to say 'this is exactly what I wanted' — which they usually only say about coffee.",
-    project: "Logistics Platform",
+    project: "Zafora Holdings",
     projectDescription:
-      "Built a real-time logistics tracking platform. WebSocket-based live updates, route optimization algorithms, and a driver mobile app. Processes 10K shipments daily.",
-    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
-    image: "client-review-4",
-    avatar: "client-avatar-4",
+      "An enterprise corporate portal and investment platform focused on structuring, funding, and delivering critical infrastructure projects. Backed by a clean CMS and admin dashboard for organizing project pipelines across transport, energy, healthcare, and water sectors. Includes built-in CRM tooling to manage investor inquiries, publish partner updates, and maintain public-facing site content.",
+    tech: ["Next.js", "Contentful", "PostgreSQL", "GraphQL", "TypeScript"],
+    image: "/assets/images/gallery/zafora.jpg",
+    avatar: "/assets/images/gallery/zafora.jpg",
   },
   {
-    id: "review-5",
+    id: "review-chain-gpt",
     client: "Elena Rodriguez",
     role: "Product Manager",
-    company: "HealthBridge",
+    company: "ChainGPT Labs",
     quote:
-      "They took our 'just make it faster' request and turned it into a proper caching strategy and query optimization plan. Wizards? Possibly. Engineers? Absolutely.",
-    project: "Performance Optimization",
+      "They took our 'just make it faster' request and turned it into a proper caching strategy and query optimization plan. Wizards? Possibly. Engineers? Absolutely. Performance experts.",
+    project: "ChainGPT Pad & DeCharge",
     projectDescription:
-      "Optimized a healthcare dashboard loading patient records for 50K+ users. Implemented Redis caching, database query optimization, and lazy loading. Load time dropped from 8s to 1.2s.",
-    tech: ["Redis", "PostgreSQL", "React", "Cloudflare"],
-    image: "client-review-5",
-    avatar: "client-avatar-5",
+      "A Web3 IDO launchpad and decentralized fundraising hub tailored for emerging crypto and AI projects. Features a tiered staking system (Explorer to Pioneer) enabling users to lock tokens, boost pool multipliers, and qualify for tier allocations. Integrates detailed project discovery cards, interactive financial metrics, and live token sale progress monitors.",
+    tech: ["React", "Web3.js", "Solidity", "Tailwind", "TypeScript"],
+    image: "/assets/images/gallery/launhpad.jpg",
+    avatar: "/assets/images/gallery/launhpad.jpg",
   },
   {
-    id: "review-6",
+    id: "review-crypto-skope",
     client: "David Kim",
     role: "DevOps Lead",
     company: "StreamLine",
     quote:
       "They took our 'just make it work' deployment process and turned it into a proper CI/CD pipeline. Fewer rollbacks, fewer late nights, fewer 'works on my machine' excuses.",
-    project: "CI/CD Pipeline",
+    project: "CryptoSkope",
     projectDescription:
-      "Designed and implemented a full CI/CD pipeline with GitHub Actions. Automated testing, Docker builds, and Kubernetes deployments. Deploy time reduced from 45 min to 6 min.",
-    tech: ["GitHub Actions", "Docker", "Kubernetes", "Terraform"],
-    image: "client-review-6",
-    avatar: "client-avatar-6",
+      "A crypto market analytics platform offering global screener data, 24-hour volume metrics, and fear-and-greed sentiment tracking. Provides deep ecosystem coverage with interactive OHLC candlestick charts and technical indicators (MA, RSI, MACD) for Theta Network tokens. Integrates a news aggregator delivering up-to-the-minute headlines from crypto outlets like CoinDesk and CryptoCompare.",
+    tech: ["React", "D3.js", "Node.js", "PostgreSQL", "TypeScript"],
+    image: "/assets/images/gallery/marketplace.jpg",
+    avatar: "/assets/images/gallery/marketplace.jpg",
   },
 ];
 
@@ -134,13 +134,13 @@ function ReviewOverlay({
       aria-modal="true"
       aria-label={`Project details for ${review.project}`}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
       <div className="relative z-10 grid max-h-full w-full max-w-5xl overflow-y-auto rounded-xl bg-white md:grid-cols-2">
         {/* Image */}
         <div className="relative aspect-square overflow-hidden rounded-t-xl md:aspect-auto md:rounded-l-xl md:rounded-tr-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://picsum.photos/seed/${review.image}/1200/900`}
+            src={review.image}
             alt={review.project}
             className="h-full w-full object-cover"
           />
@@ -160,7 +160,7 @@ function ReviewOverlay({
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://picsum.photos/seed/${review.avatar}/100/100`}
+              src={review.avatar}
               alt={review.client}
               className="h-10 w-10 rounded-full object-cover"
             />
@@ -290,7 +290,7 @@ export default function ClientReviews() {
   const active = clientReviews[activeIndex];
 
   return (
-    <section ref={sectionRef} id="client-reviews" className="section bg-white">
+    <section ref={sectionRef} id="reviews-section" className="section bg-white">
       <div className="section-spacing">
         <div className="container">
           {/* Header */}
@@ -319,7 +319,7 @@ export default function ClientReviews() {
                   <div className="flex items-start gap-4">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`https://picsum.photos/seed/${review.avatar}/80/80`}
+                      src={review.avatar}
                       alt={review.client}
                       loading="lazy"
                       className="h-12 w-12 flex-shrink-0 rounded-full object-cover"
@@ -346,38 +346,33 @@ export default function ClientReviews() {
             </div>
 
             {/* Right — sticky client image */}
-            <div className="hidden lg:block">
-              <div className="sticky top-32">
-                <div
-                  ref={imageRef}
-                  className="relative aspect-[4/5] overflow-hidden rounded-lg bg-neutral-100"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    key={active.id}
-                    src={`https://picsum.photos/seed/${active.image}/800/1000`}
-                    alt={active.project}
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                    <p className="text-sm font-semibold text-white">{active.project}</p>
-                    <p className="text-xs text-white/70">
-                      {active.client} - {active.company}
-                    </p>
-                  </div>
+            <div className="lg:sticky lg:top-32">
+              <div className="relative aspect-square overflow-hidden bg-neutral-100 lg:aspect-[4/5]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  key={active.id}
+                  src={active.image}
+                  alt={active.project}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                  <p className="text-sm font-semibold text-white">{active.project}</p>
+                  <p className="text-xs text-white/70">
+                    {active.client} - {active.company}
+                  </p>
                 </div>
+              </div>
 
-                {/* Tech tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {active.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+              {/* Tech tags */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {active.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const metrics = [
-  { stat: "99.9%", label: "Uptime across deployed services" },
+  { stat: "99.9%", label: "Uptime across deployed production systems" },
   { stat: "50+", label: "APIs designed and shipped to production" },
-  { stat: "4.9", label: "Code review rating from collaborators" },
+  { stat: "4.9", label: "Average code review rating from collaborators" },
   { stat: "12x", label: "Query performance improved after optimization" },
   { stat: "-68%", label: "Reduction in infrastructure costs after migration" },
-  { stat: "850K", label: "Requests processed daily at peak" },
-  { stat: "14 days", label: "From idea to first production deploy" },
+  { stat: "850K", label: "Requests processed daily at peak load" },
+  { stat: "14 days", label: "From idea to first production deployment" },
 ];
 
 export default function Benchmark() {
@@ -48,7 +48,7 @@ export default function Benchmark() {
     return () => ctx.revert();
   }, []);
 
-  const animateStat = (newStat: string) => {
+  const animateStat = useCallback((newStat: string) => {
     if (!statRef.current) return;
     const el = statRef.current;
     gsap.to(el, {
@@ -61,7 +61,7 @@ export default function Benchmark() {
         gsap.to(el, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" });
       },
     });
-  };
+  }, []);
 
   return (
     <section ref={sectionRef} className="section bg-[#f4f4f2]">
@@ -74,7 +74,7 @@ export default function Benchmark() {
               <div className="mt-2 flex items-start overflow-hidden">
                 <span
                   ref={statRef}
-                  className="font-heading text-[clamp(72px,10vw,140px)] font-bold leading-none tracking-tight bg-gradient-to-br from-[#6366f1] via-[#8b5cf6] to-[#06b6d4] bg-clip-text text-transparent"
+                  className="font-heading text-[clamp(72px,10vw,140px)] font-bold leading-none tracking-tight text-black"
                 >
                   12x
                 </span>

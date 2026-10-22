@@ -11,14 +11,14 @@ export default function Navbar() {
       <div className="container">
         <div className="navbar bg-transparent! flex items-center justify-between py-5">
           {/* Brand */}
-          <a href="#hero-section" className="brand flex items-center gap-2" aria-label="Mehfil home">
+          <a href="#hero-section" className="brand flex items-center gap-2" aria-label="Lumenis home">
             <span
               className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               M
             </span>
-            <span className="text-sm font-semibold tracking-tight text-black">Mehfil</span>
+            <span className="text-sm font-semibold tracking-tight text-black">Lumenis</span>
           </a>
 
           {/* Nav links */}

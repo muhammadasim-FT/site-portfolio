@@ -209,7 +209,7 @@ export default function BookingCalendar() {
                 >
                   M
                 </span>
-                <span className="text-sm font-semibold text-black">Mehfil</span>
+                <span className="text-sm font-semibold text-black">Lumenis</span>
               </div>
 
               {/* Meeting type */}

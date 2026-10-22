@@ -21,136 +21,81 @@ type GalleryProject = {
 
 const galleryProjects: GalleryProject[] = [
   {
-    id: "task-engine",
-    title: "Task Engine",
-    category: "Full-Stack",
+    id: "chain-gpt-pad",
+    title: "ChainGPT Pad & DeCharge",
+    category: "Web3 Launchpad",
     year: "2024",
     description:
-      "A distributed task queue built with Node.js, Redis, and BullMQ. Handles job retries, rate limiting, and real-time status tracking across multiple worker processes.",
-    tech: ["Node.js", "Redis", "BullMQ", "TypeScript"],
-    image: "moments-project-1",
-    aspect: "3/4",
-  },
-  {
-    id: "realtime-collar",
-    title: "Realtime Collar",
-    category: "WebSocket",
-    year: "2024",
-    description:
-      "A WebSocket-based live data streaming platform. Sub-100ms latency for 10K concurrent connections using a custom event-driven architecture.",
-    tech: ["Socket.io", "Node.js", "Redis", "Docker"],
-    image: "moments-project-2",
-    aspect: "1/1",
-  },
-  {
-    id: "query-layer",
-    title: "Query Layer",
-    category: "API",
-    year: "2023",
-    description:
-      "A GraphQL federation layer that unifies five microservices into a single endpoint. Schema stitching with automatic type generation and query depth limiting.",
-    tech: ["GraphQL", "Apollo", "PostgreSQL", "TypeScript"],
-    image: "moments-project-3",
+      "A Web3 IDO launchpad and decentralized fundraising hub tailored for emerging crypto and AI projects. Features a tiered staking system (Explorer to Pioneer) enabling users to lock tokens, boost pool multipliers, and qualify for tier allocations. Integrates detailed project discovery cards, interactive financial metrics, and live token sale progress monitors.",
+    tech: ["React", "Web3.js", "Solidity", "Tailwind", "TypeScript"],
+    image: "/assets/images/gallery/launhpad.jpg",
     aspect: "4/3",
   },
   {
-    id: "pipeline",
-    title: "Pipeline",
-    category: "DevOps",
-    year: "2023",
+    id: "chain-gpt-ai-hub",
+    title: "ChainGPT AI Hub / Foresight AI",
+    category: "Web3 Intelligence",
+    year: "2024",
     description:
-      "A CI/CD automation pipeline with GitHub Actions, Docker multi-stage builds, and Kubernetes rolling deployments. Reduced deploy time from 45 min to 6 min.",
-    tech: ["GitHub Actions", "Docker", "Kubernetes", "Terraform"],
-    image: "moments-project-4",
+      "A real-time Web3 intelligence suite that consolidates market analytics, AI narratives, and crypto sentiment indicators. Features interactive narrative heatmaps that track volume and bullish/bearish tension across major market themes. Equips traders with integrated TradingView candlestick charts, automated smart contract vulnerability scanning, and instant price alerts.",
+    tech: ["React", "TradingView", "Python", "FastAPI", "TypeScript"],
+    image: "/assets/images/gallery/aihub.jpg",
     aspect: "1/1",
   },
   {
-    id: "event-flow",
-    title: "Event Flow",
-    category: "Full-Stack",
-    year: "2023",
+    id: "chain-gpt-nft",
+    title: "ChainGPT AI NFT Generator",
+    category: "AI NFT Platform",
+    year: "2024",
     description:
-      "An event-driven microservices platform using Apache Kafka. Handles 850K events per day with exactly-once processing semantics and dead-letter recovery.",
-    tech: ["Kafka", "Node.js", "MongoDB", "gRPC"],
-    image: "moments-project-5",
+      "An AI-driven NFT creation platform allowing creators to mint custom digital assets using natural language prompts and multi-style filters. Provides native multi-chain deployment and minting support across networks like Solana, Ethereum, BNB Chain, Polygon, and Avalanche. Hosts an interactive campaign hub showcasing ecosystem events, prize pools, and partner quests integrated with Galxe and Zealy.",
+    tech: ["React", "Stable Diffusion", "Web3.js", "IPFS", "TypeScript"],
+    image: "/assets/images/gallery/nft.jpg",
     aspect: "3/4",
   },
   {
-    id: "auth-vault",
-    title: "Auth Vault",
-    category: "Security",
-    year: "2024",
-    description:
-      "A zero-trust authentication service with JWT rotation, refresh token reuse detection, and hardware key support. Passed third-party security audit.",
-    tech: ["Node.js", "OAuth2", "WebAuthn", "PostgreSQL"],
-    image: "moments-project-6",
-    aspect: "4/5",
-  },
-  {
-    id: "data-mesh",
-    title: "Data Mesh",
-    category: "Infrastructure",
+    id: "cryptoskope",
+    title: "CryptoSkope",
+    category: "Crypto Analytics",
     year: "2023",
     description:
-      "A serverless data mesh architecture on AWS Lambda and Step Functions. Processes 2TB daily with automatic schema evolution and data lineage tracking.",
-    tech: ["AWS Lambda", "Step Functions", "S3", "DynamoDB"],
-    image: "moments-project-7",
-    aspect: "1/1",
-  },
-  {
-    id: "edge-cache",
-    title: "Edge Cache",
-    category: "Performance",
-    year: "2024",
-    description:
-      "A distributed edge caching layer using Cloudflare Workers and KV storage. Reduced API response times by 78% globally with intelligent cache invalidation.",
-    tech: ["Cloudflare Workers", "KV", "TypeScript", "REST"],
-    image: "moments-project-8",
+      "A crypto market analytics platform offering global screener data, 24-hour volume metrics, and fear-and-greed sentiment tracking. Provides deep ecosystem coverage with interactive OHLC candlestick charts and technical indicators (MA, RSI, MACD) for Theta Network tokens. Integrates a news aggregator delivering up-to-the-minute headlines from crypto outlets like CoinDesk and CryptoCompare.",
+    tech: ["React", "D3.js", "Node.js", "PostgreSQL", "TypeScript"],
+    image: "/assets/images/gallery/marketplace.jpg",
     aspect: "4/3",
   },
   {
-    id: "stream-line",
-    title: "Stream Line",
-    category: "Full-Stack",
-    year: "2024",
+    id: "digitx",
+    title: "DigitX Agency",
+    category: "Agency Website",
+    year: "2023",
     description:
-      "A real-time collaborative document editing platform using CRDTs and WebSockets. Supports 500+ concurrent editors with conflict-free merging.",
-    tech: ["CRDT", "WebSockets", "React", "Node.js"],
-    image: "moments-project-9",
+      "A modern, dark-mode agency website built to showcase digital strategy, UI/UX design, web development, and digital marketing services. Features an editorial layout with high-contrast typography, interactive service breakdowns, and featured client case studies. Includes social proof sections, client testimonials, and clear call-to-action touchpoints for prospective project inquiries.",
+    tech: ["Next.js", "Framer Motion", "Tailwind", "Contentful", "TypeScript"],
+    image: "/assets/images/gallery/digiX.jpg",
     aspect: "1/1",
   },
   {
-    id: "metric-hub",
-    title: "Metric Hub",
-    category: "Observability",
+    id: "al-nasr",
+    title: "Al-Nasr English Academy",
+    category: "Education Portal",
     year: "2023",
     description:
-      "A centralized observability platform aggregating logs, metrics, and traces from 20+ microservices. Custom alerting engine with anomaly detection.",
-    tech: ["Prometheus", "Grafana", "ELK", "Go"],
-    image: "moments-project-10",
+      "An educational institution web portal built to present English language learning programs for young learners, teens, and adults. Displays clear program overviews, interactive class timetables, fee tiers, and instructor credentials. Features video learning showcases, student achievement highlights, and direct enrollment registration forms.",
+    tech: ["Next.js", "Sanity CMS", "PostgreSQL", "Tailwind", "TypeScript"],
+    image: "/assets/images/gallery/alnasr.jpg",
+    aspect: "4/3",
+  },
+  {
+    id: "azura-yachts",
+    title: "Azura Luxury Yachts",
+    category: "Luxury Charter",
+    year: "2024",
+    description:
+      "A luxury maritime charter website presenting a curated fleet of superyachts, sailing vessels, and expedition boats. Showcases comprehensive vessel specifications, onboard amenities, and high-definition photography capturing charter experiences. Features an interactive booking interface allowing clients to customize charter dates, destinations, guest counts, and tailored itineraries.",
+    tech: ["Next.js", "GSAP", "Three.js", "Tailwind", "TypeScript"],
+    image: "/assets/images/gallery/azura.jpg",
     aspect: "3/4",
-  },
-  {
-    id: "deploy-bot",
-    title: "Deploy Bot",
-    category: "DevOps",
-    year: "2024",
-    description:
-      "A Slack-integrated deployment bot with canary releases, automatic rollbacks, and deployment analytics. Used by 5 engineering teams daily.",
-    tech: ["Slack API", "Node.js", "Docker", "AWS"],
-    image: "moments-project-11",
-    aspect: "1/1",
-  },
-  {
-    id: "code-sight",
-    title: "Code Sight",
-    category: "Developer Tools",
-    year: "2023",
-    description:
-      "A static analysis tool that detects code smells, security vulnerabilities, and performance bottlenecks. Integrates with CI/CD pipelines via GitHub Actions.",
-    tech: ["TypeScript", "AST", "Node.js", "GitHub API"],
-    image: "moments-project-12",
-    aspect: "4/5",
   },
 ];
 
@@ -180,13 +125,13 @@ function GalleryOverlay({
       aria-modal="true"
       aria-label={project.title}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative z-10 grid max-h-full w-full max-w-5xl overflow-y-auto rounded-xl bg-white shadow-2xl md:grid-cols-2">
+      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+      <div className="relative z-10 grid max-h-full w-full max-w-5xl overflow-y-auto bg-white md:grid-cols-2">
         {/* Image */}
         <div className="relative aspect-square overflow-hidden rounded-t-xl md:aspect-auto md:rounded-l-xl md:rounded-tr-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://picsum.photos/seed/${project.image}/1200/900`}
+            src={project.image}
             alt={project.title}
             className="h-full w-full object-cover"
           />
@@ -317,8 +262,8 @@ export default function MomentsGallery() {
   }, []);
 
   // Split projects into two rows for the marquee
-  const row1 = galleryProjects.slice(0, 6);
-  const row2 = galleryProjects.slice(6);
+  const row1 = galleryProjects.slice(0, 4);
+  const row2 = galleryProjects.slice(4);
 
   return (
     <section
@@ -407,20 +352,24 @@ const GalleryCard = forwardRef<
       onMouseEnter={() => onHover(project.id)}
       onMouseLeave={() => onHover(null)}
       className={`group relative block flex-shrink-0 overflow-hidden bg-white text-left transition-all duration-500 ${
-        isHovered ? "z-10 shadow-2xl" : "z-0"
+        isHovered ? "z-10" : "z-0"
       }`}
       style={{
-        width: "clamp(200px, 25vw, 380px)",
+        width: "clamp(160px, 40vw, 320px)",
         aspectRatio: project.aspect,
       }}
       aria-label={`Open project: ${project.title}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`https://picsum.photos/seed/${project.image}/600/750`}
+        src={project.image}
         alt={project.title}
         loading="lazy"
         className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        style={{ opacity: 0, transition: "opacity 0.5s ease, transform 0.7s ease-out" }}
+        onLoad={(e) => {
+          (e.target as HTMLImageElement).style.opacity = "1";
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">

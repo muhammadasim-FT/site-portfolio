@@ -1,65 +1,96 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const testimonials = [
   {
     quote:
-      "We handed them a tangled monolith and a two-page brief. They came back with a clean service architecture, clear documentation, and a migration path that actually worked. Still not sure how they do it, but we're fans.",
-    name: "Engineering Manager",
-    company: "Platform Team",
-    avatar: "lumenis-avatar-1",
+      "The NERMS platform transformed how we coordinate emergency response across the nation. What used to take hours of phone calls now happens in seconds on a live map.",
+    name: "Ahmed Hassan",
+    company: "Rescue 1122",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
-      "Not only did they write clean, well-tested code — they understood the edge cases we hadn't thought of, nailed the API design, and even spotted a performance bug in our existing stack. 12/10 would work with again.",
-    name: "Senior Developer",
-    company: "Backend Team",
-    avatar: "lumenis-avatar-2",
+      "ServiceFlow gave us a single pane of glass for our entire operation — leads, dispatch, invoicing, and revenue tracking all in one place. Our technician utilization jumped 40% in the first quarter.",
+    name: "Sarah Mitchell",
+    company: "Summit Home Services",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
-      "Working with them felt like a masterclass in software design. We laughed, we refactored (a little), and now we have a codebase that new engineers can actually understand. Worth every hour.",
-    name: "Tech Lead",
-    company: "Product Engineering",
-    avatar: "lumenis-avatar-3",
+      "Sift.ai's five-agent pipeline does in hours what used to take our team weeks. The quality of leads and personalized outreach drafts is indistinguishable from human work.",
+    name: "Marcus Chen",
+    company: "GrowthOps Agency",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
       "We asked for a simple REST API. They gave us clean, well-documented, AND scalable. They even got our team lead to say 'this is exactly what I wanted' — which they usually only say about coffee.",
-    name: "Head of Platform",
-    company: "Infrastructure",
-    avatar: "lumenis-avatar-4",
+    name: "James Okafor",
+    company: "LogiTrack",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
       "They took our 'just make it faster' request and turned it into a proper caching strategy and query optimization plan. Wizards? Possibly. Engineers? Absolutely. Performance experts.",
-    name: "Head of Performance",
-    company: "Web Team",
-    avatar: "lumenis-avatar-5",
+    name: "Elena Rodriguez",
+    company: "ChainGPT Labs",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
       "They took our 'just make it work' deployment process and turned it into a proper CI/CD pipeline. Fewer rollbacks, fewer late nights, fewer 'works on my machine' excuses.",
-    name: "DevOps Lead",
-    company: "Platform Team",
-    avatar: "lumenis-avatar-6",
+    name: "David Kim",
+    company: "StreamLine",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
       "We gave them absolutely no direction, two contradictory tickets, and one half-faked architecture diagram — and somehow they made something clean and maintainable. They're either magic or just very patient.",
     name: "Engineering Manager",
     company: "Full-Stack Team",
-    avatar: "lumenis-avatar-7",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
   {
     quote:
       "They understood our system's constraints better than we did. I'm pretty sure they read every line of our legacy code, mapped the dependencies, and came back with a plan. Hire them before a competitor does.",
     name: "CTO",
     company: "Startup",
-    avatar: "lumenis-avatar-8",
+    avatar: "/assets/images/images/mockup1.jpg",
   },
 ];
 
 export default function Testimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".logo-animation-holder",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".logo-animation-holder", start: "top 85%" },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="section">
+    <section ref={sectionRef} className="section">
       <div className="section-spacing">
         <div className="container">
           <div className="section-inside">
@@ -71,28 +102,28 @@ export default function Testimonials() {
               {/* Repeating logo animation */}
               <div className="logo-animation-holder">
                 <div className="logo-animation-half _1">
-                  <div className="logo-text">Mehfil</div>
+                  <div className="logo-text">Lumenis</div>
                 </div>
                 <div className="logo-animation-half _2">
-                  <div className="logo-text">Mehfil</div>
+                  <div className="logo-text">Lumenis</div>
                 </div>
                 <div className="logo-animation-half _3">
-                  <div className="logo-text">Mehfil</div>
+                  <div className="logo-text">Lumenis</div>
                 </div>
                 <div className="logo-animation-full">
-                  <div className="logo-text">Mehfil</div>
+                  <div className="logo-text">Lumenis</div>
                 </div>
               </div>
             </div>
 
             <div className="testimonial-holder">
-              {testimonials.map((t) => (
-                <div key={t.name} className="testimonial-item">
+              {testimonials.map((t, i) => (
+                <div key={`${t.name}-${i}`} className="testimonial-item">
                   <p>&ldquo;{t.quote}&rdquo;</p>
                   <div className="testimonial-user-holder">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`https://picsum.photos/seed/${t.avatar}/100/100`}
+                      src={t.avatar}
                       alt={t.name}
                       loading="lazy"
                       className="testimonial-user"

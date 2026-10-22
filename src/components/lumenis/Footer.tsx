@@ -163,7 +163,7 @@ export default function Footer() {
           className="footer-brand-text absolute -left-12 top-0 m-0 p-0 font-heading text-[32vw] font-bold leading-[0.9] tracking-[-0.06em] text-black whitespace-nowrap"
           aria-hidden="true"
         >
-          Mehfil
+          Lumenis
         </p>
       </div>
     </section>

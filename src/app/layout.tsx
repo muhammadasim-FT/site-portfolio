@@ -20,9 +20,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Mehfil — Software Engineer",
+  title: "Lumenis — Software Engineer",
   description:
-    "Personal portfolio of Mehfil, a software engineer specializing in full-stack development, cloud infrastructure, and API design.",
+    "Personal portfolio of Lumenis, a software engineer specializing in full-stack development, cloud infrastructure, and API design.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
