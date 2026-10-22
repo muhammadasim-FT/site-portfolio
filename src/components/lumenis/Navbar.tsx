@@ -42,25 +42,7 @@ export default function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-4">
-            {/* compass */}
-            <a
-              href="#about-section"
-              aria-label="About"
-              className="hidden h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-secondary hover:text-secondary lg:flex"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-                className="h-4 w-4"
-              >
-                <circle cx="12" cy="12" r="9" />
-                <path d="M15.5 8.5 13.4 13.4 8.5 15.5l2.1-4.9 4.9-2.1z" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-
+           
             <a
               href="#booking-section"
               className="nav-cta flex items-center gap-2 rounded-full bg-white py-2 pl-5 pr-2 text-[13px] font-semibold text-[#0b140f] transition-colors hover:bg-[#e8f4e4]"

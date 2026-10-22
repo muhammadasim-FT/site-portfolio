@@ -223,10 +223,10 @@ export default function Home() {
 
       <Navbar />
       <div id="hero-section"><Hero /></div>
+      <div id="services-section"><Services /></div>
       <div id="about-section"><About /></div>
       <div id="projects-section"><Projects /></div>
       <div id="gallery-section"><MomentsGallery /></div>
-      <div id="services-section"><Services /></div>
       <div id="benchmark-section"><Benchmark /></div>
       <div id="reviews-section"><ClientReviews /></div>
       <div id="booking-section"><BookingCalendar /></div>
