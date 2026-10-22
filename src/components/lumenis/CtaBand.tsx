@@ -29,7 +29,7 @@ export default function CtaBand() {
         </p>
 
         {/* Action */}
-        <a
+        {/* <a
           href="#contact-section"
           className="group ml-auto flex shrink-0 items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:border-secondary hover:text-secondary"
         >
@@ -46,7 +46,7 @@ export default function CtaBand() {
           >
             <path d="M4 12h16M14 6l6 6-6 6" />
           </svg>
-        </a>
+        </a> */}
       </div>
     </section>
   );

@@ -1,3 +1,11 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const services = [
   {
     name: "Full-Stack Development",
@@ -41,31 +49,118 @@ const services = [
 ];
 
 const stats = [
-  { value: "4+", label: "Years Experience" },
-  { value: "10+", label: "Projects Delivered" },
-  { value: "100%", label: "Client Focused" },
+  { value: "4", suffix: "+", label: "Years Experience" },
+  { value: "10", suffix: "+", label: "Projects Delivered" },
+  { value: "100", suffix: "%", label: "Client Focused" },
 ];
 
 export default function Services() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      /* left header arrives in reading order */
+      gsap.utils.toArray<HTMLElement>(".svc-fade").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { y: 18, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            delay: i * 0.08,
+            scrollTrigger: { trigger: ".services-card", start: "top 85%" },
+          }
+        );
+      });
+
+      /* service rows arrive one by one */
+      gsap.utils.toArray<HTMLElement>(".svc-step").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { y: 22, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            delay: 0.1 + i * 0.07,
+            scrollTrigger: { trigger: ".services-card", start: "top 85%" },
+          }
+        );
+      });
+
+      /* stats count up once — the "proof" move */
+      gsap.utils.toArray<HTMLElement>(".stat-value").forEach((el, i) => {
+        const target = Number(el.dataset.target ?? "0");
+        const suffix = el.dataset.suffix ?? "";
+        const obj = { v: 0 };
+        gsap.to(obj, {
+          v: target,
+          duration: 1.1,
+          ease: "power2.out",
+          delay: 0.2 + i * 0.12,
+          scrollTrigger: { trigger: ".svc-stats", start: "top 88%" },
+          onUpdate: () => {
+            el.textContent = `${Math.round(obj.v)}${suffix}`;
+          },
+        });
+      });
+
+      /* the right-hand copy lifts, the portrait settles from a slight scale */
+      gsap.fromTo(
+        ".svc-copy",
+        { y: 22, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          delay: 0.1,
+          scrollTrigger: { trigger: ".services-card", start: "top 85%" },
+        }
+      );
+
+      gsap.fromTo(
+        ".svc-portrait",
+        { opacity: 0, scale: 1.05, y: 18 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          delay: 0.25,
+          scrollTrigger: { trigger: ".services-card", start: "top 85%" },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="section">
+    <section ref={sectionRef} className="section">
       <div className="px-8">
         <div className="services-card grid overflow-hidden rounded-2xl lg:grid-cols-[40%_1fr]">
           {/* ---------- Services ---------- */}
-          <div className="fade-in-on-scroll p-8 lg:p-11">
-            <p className="paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
+          <div className="p-8 lg:p-11">
+            <p className="svc-fade paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
               ‣ Services
             </p>
-            <h2 className="h3-style mt-4">What I Do</h2>
-            <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-neutral-600">
+            <h2 className="svc-fade h3-style mt-4">What I Do</h2>
+            <p className="svc-fade mt-4 max-w-sm text-[13.5px] leading-relaxed text-neutral-600">
               End-to-end development and cloud solutions tailored to your
               business needs.
             </p>
 
             <div className="mt-7 grid gap-x-6 gap-y-6 sm:grid-cols-2">
               {services.map((s) => (
-                <div key={s.name} className="flex items-start gap-3.5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e4ecdb] text-[#5d7f3a]">
+                <div key={s.name} className="svc-step group flex items-start gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e4ecdb] text-[#5d7f3a] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-3">
                     {s.icon}
                   </div>
                   <div>
@@ -84,7 +179,7 @@ export default function Services() {
           {/* ---------- About Me ---------- */}
           <div className="grid grid-cols-[70%_1fr] relative border-t border-neutral-200 lg:border-l lg:border-t-0"> {/* taste-skill-ignore: reference mockup divider between Services and About halves */}
             <div className="relative flex flex-col p-8 lg:p-11">
-              <div className="fade-in-on-scroll">
+              <div className="svc-copy">
                 <p className="flex items-center gap-1.5 paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="h-3 w-3" aria-hidden="true">
                     <path d="M8 2v12M2.9 5l10.2 6M13.1 5 2.9 11" />
@@ -101,16 +196,23 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="fade-in-on-scroll mt-6 grid grid-cols-3 divide-x divide-neutral-300"> {/* taste-skill-ignore: reference mockup vertical stat dividers */}
+              <div className="svc-stats mt-6 grid grid-cols-3 divide-x divide-neutral-300"> {/* taste-skill-ignore: reference mockup vertical stat dividers */}
                 {stats.map((s) => (
                   <div key={s.label} className="px-3.5 first:pl-0">
-                    <p className="h6-style text-neutral-900">{s.value}</p>
+                    <p
+                      className="stat-value h6-style text-neutral-900"
+                      data-target={s.value}
+                      data-suffix={s.suffix}
+                    >
+                      {s.value}
+                      {s.suffix}
+                    </p>
                     <p className="mt-1 text-[11px] text-neutral-500">{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="fade-in-on-scroll mt-8">
+              <div className="svc-fade mt-8">
                 <a href="#booking-section" className="button secondary">
                   <span className="button-text-holder">
                     <span className="button-text">Learn More</span>
@@ -125,7 +227,7 @@ export default function Services() {
 
 
             {/* ---------- Portrait column ---------- */}
-            <div className="fade-in-on-scroll flex h-auto absolute bottom-10 right-0">
+            <div className="svc-portrait flex h-auto absolute bottom-10 right-0">
 
 
               <div className="relative w-full">

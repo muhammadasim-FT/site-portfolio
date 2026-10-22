@@ -10,8 +10,10 @@ import About from "@/components/lumenis/About";
 import Projects from "@/components/lumenis/Projects";
 import MomentsGallery from "@/components/lumenis/MomentsGallery";
 import Services from "@/components/lumenis/Services";
+import WhyWorkWithMe from "@/components/lumenis/WhyWorkWithMe";
 import Benchmark from "@/components/lumenis/Benchmark";
 import ClientReviews from "@/components/lumenis/ClientReviews";
+import HowIWork from "@/components/lumenis/HowIWork";
 import BookingCalendar from "@/components/lumenis/BookingCalendar";
 import CtaBand from "@/components/lumenis/CtaBand";
 import Testimonials from "@/components/lumenis/Testimonials";
@@ -224,13 +226,16 @@ export default function Home() {
       <Navbar />
       <div id="hero-section"><Hero /></div>
       <div id="services-section"><Services /></div>
+      
+      <HowIWork />
       <div id="about-section"><About /></div>
       <div id="projects-section"><Projects /></div>
       <div id="gallery-section"><MomentsGallery /></div>
       <div id="benchmark-section"><Benchmark /></div>
       <div id="reviews-section"><ClientReviews /></div>
       <div id="booking-section"><BookingCalendar /></div>
-      <CtaBand />
+      <WhyWorkWithMe />
+        <CtaBand />
       <div id="testimonials-section"><Testimonials /></div>
       <div id="contact-section"><Footer /></div>
     </div>
