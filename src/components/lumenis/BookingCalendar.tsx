@@ -197,7 +197,7 @@ export default function BookingCalendar() {
                 Book a Call
               </p>
               <h2
-                className="text-[clamp(29px,2.9vw,40px)] font-medium tracking-[-0.02em] text-[#14261c]"
+                className="text-[clamp(29px,2.9vw,40px)] font-medium tracking-[-0.02em] text-primary"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Schedule a Call
@@ -209,11 +209,11 @@ export default function BookingCalendar() {
               <div className="mt-9 flex flex-wrap gap-x-8 gap-y-5">
                 {features.map((f) => (
                   <div key={f.title} className="flex items-start gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#14261c] text-[#b8f04d]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-secondary">
                       {f.icon}
                     </span>
                     <span>
-                      <p className="text-[12.5px] font-semibold leading-tight text-[#14261c]">{f.title}</p>
+                      <p className="text-[12.5px] font-semibold leading-tight text-primary">{f.title}</p>
                       <p className="mt-1 text-[11.5px] leading-tight text-neutral-500">{f.description}</p>
                     </span>
                   </div>
@@ -228,7 +228,7 @@ export default function BookingCalendar() {
                 <div className="grid gap-6 sm:grid-cols-[1fr_100px]">
                   {/* mini month calendar */}
                   <div>
-                    <p className="text-[12.5px] font-semibold text-[#14261c]">Select a date &amp; time</p>
+                    <p className="text-[12.5px] font-semibold text-primary">Select a date &amp; time</p>
 
                     <div className="mt-3 flex items-center justify-between">
                       <p className="text-[11px] text-neutral-500">
@@ -238,7 +238,7 @@ export default function BookingCalendar() {
                         <button
                           onClick={goToPrevMonth}
                           aria-label="Previous month"
-                          className="flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-[#eef2ea] hover:text-[#14261c]"
+                          className="flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-[#eef2ea] hover:text-primary"
                         >
                           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3" aria-hidden="true">
                             <path d="M10 3 5 8l5 5" />
@@ -247,7 +247,7 @@ export default function BookingCalendar() {
                         <button
                           onClick={goToNextMonth}
                           aria-label="Next month"
-                          className="flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-[#eef2ea] hover:text-[#14261c]"
+                          className="flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-[#eef2ea] hover:text-primary"
                         >
                           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3" aria-hidden="true">
                             <path d="m6 3 5 5-5 5" />
@@ -284,16 +284,16 @@ export default function BookingCalendar() {
                             disabled={!available}
                             className={`relative flex aspect-square items-center justify-center rounded-full text-[11px] font-medium transition-colors ${
                               isSelected
-                                ? "bg-[#b8f04d] font-semibold text-[#14261c]"
+                                ? "bg-secondary font-semibold text-primary"
                                 : available
-                                  ? "text-[#14261c] hover:bg-[#edf2e7]"
+                                  ? "text-primary hover:bg-[#edf2e7]"
                                   : "text-neutral-300"
                             }`}
                             aria-label={`${date.toDateString()}${available ? " - available" : " - unavailable"}`}
                           >
                             {dayNum}
                             {day.isToday && !isSelected && (
-                              <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[#b8f04d]" />
+                              <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-secondary" />
                             )}
                           </button>
                         );
@@ -311,8 +311,8 @@ export default function BookingCalendar() {
                           onClick={() => handleTimeSelect(time)}
                           className={`rounded-xl py-2 text-center text-[11px] font-medium transition-colors ${
                             isSelected
-                              ? "bg-[#b8f04d] font-semibold text-[#14261c]"
-                              : "border border-neutral-200 text-neutral-600 hover:border-[#b8f04d] hover:text-[#14261c]"
+                              ? "bg-secondary font-semibold text-primary"
+                              : "border border-neutral-200 text-neutral-600 hover:border-secondary hover:text-primary"
                           }`}
                         >
                           {time}
@@ -327,8 +327,8 @@ export default function BookingCalendar() {
               <aside className="relative mt-4 rounded-2xl bg-[#132b1e] p-5 shadow-[0_30px_70px_rgba(20,38,28,0.35)] sm:mt-0"> {/* taste-skill-ignore: overlapping floating promo card */}
                 {confirmed ? (
                   <>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#b8f04d]">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="#14261c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary" aria-hidden="true">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                     </span>
@@ -339,7 +339,7 @@ export default function BookingCalendar() {
                     </p>
                     <button
                       onClick={handleReset}
-                      className="mt-4 text-[11px] font-medium text-[#b8f04d] underline underline-offset-2 hover:text-[#c9fa5e]"
+                      className="mt-4 text-[11px] font-medium text-secondary underline underline-offset-2 hover:text-[#c9fa5e]"
                     >
                       Book another time
                     </button>
@@ -369,7 +369,7 @@ export default function BookingCalendar() {
                     )}
                     <button
                       onClick={handleBook}
-                      className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#b8f04d] px-4 py-2 text-[11.5px] font-semibold text-[#14261c] transition-colors hover:bg-[#c9fa5e]"
+                      className="mt-4 flex items-center justify-center gap-2 rounded-full bg-secondary px-4 py-2 text-[11.5px] font-semibold text-primary transition-colors hover:bg-[#c9fa5e]"
                     >
                       Book a Call
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3" aria-hidden="true">

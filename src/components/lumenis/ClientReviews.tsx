@@ -152,7 +152,7 @@ function ReviewOverlay({
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
               {review.project}
             </p>
-            <h3 className="mt-2 font-heading text-3xl font-bold tracking-tight text-black md:text-4xl">
+            <h3 className="mt-2 font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
               {review.project}
             </h3>
           </div>
@@ -296,7 +296,7 @@ export default function ClientReviews() {
           {/* Header */}
           <div className="reviews-header mb-16 text-center">
             <p className="paragraph-title text-neutral-400">Client reviews</p>
-            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-black md:text-5xl">
+            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
               What collaborators say
             </h2>
             <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-neutral-500">

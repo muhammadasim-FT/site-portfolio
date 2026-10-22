@@ -74,7 +74,7 @@ export default function Benchmark() {
               <div className="mt-2 flex items-start overflow-hidden">
                 <span
                   ref={statRef}
-                  className="font-heading text-[clamp(72px,10vw,140px)] font-bold leading-none tracking-tight text-black"
+                  className="font-heading text-[clamp(72px,10vw,140px)] font-bold leading-none tracking-tight text-primary"
                 >
                   12x
                 </span>

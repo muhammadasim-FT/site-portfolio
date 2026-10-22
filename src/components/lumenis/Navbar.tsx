@@ -25,14 +25,14 @@ export default function Navbar() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className={`nav-link text-[13px] transition-colors hover:text-[#b8f04d] ${
-                      link.active ? "font-semibold text-[#b8f04d]" : "text-[#c7d8cd]"
+                    className={`nav-link text-[13px] transition-colors hover:text-secondary ${
+                      link.active ? "font-semibold text-secondary" : "text-[#c7d8cd]"
                     }`}
                   >
                     {link.label}
                     <span
                       aria-hidden="true"
-                      className={`mt-1 block h-[2px] w-full rounded-full ${link.active ? "bg-[#b8f04d]" : "bg-transparent"}`}
+                      className={`mt-1 block h-[2px] w-full rounded-full ${link.active ? "bg-secondary" : "bg-transparent"}`}
                     />
                   </a>
                 </li>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <a
               href="#about-section"
               aria-label="About"
-              className="hidden h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-[#b8f04d] hover:text-[#b8f04d] lg:flex"
+              className="hidden h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-secondary hover:text-secondary lg:flex"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ export default function Navbar() {
               className="nav-cta flex items-center gap-2 rounded-full bg-white py-2 pl-5 pr-2 text-[13px] font-semibold text-[#0b140f] transition-colors hover:bg-[#e8f4e4]"
             >
               Get In Touch
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#b8f04d]">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

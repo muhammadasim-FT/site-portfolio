@@ -66,16 +66,16 @@ export default function Hero() {
           {/* ---------- Left: copy ---------- */}
           <div className="max-w-xl">
             <div className="animate-on-load flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[#b8f04d]" aria-hidden="true" />
+              <span className="h-2 w-2 rounded-full bg-secondary" aria-hidden="true" />
               <p className="text-[13px] text-[#c7d8cd]">Software Engineer &amp; Digital Builder</p>
             </div>
 
             <div className="animate-on-load mt-5">
               <h1
-                className="text-[clamp(38px,4vw,56px)] font-medium leading-[1.04] tracking-[-0.03em]"
+                className="text-white text-[clamp(38px,4vw,56px)] font-medium leading-[1.04] tracking-[-0.03em]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                I build digital products that help businesses <br></br> <em className="italic text-[#b8f04d]">grow.</em>
+                I build digital products that help businesses <br></br> <em className="italic text-secondary">grow.</em>
               </h1>
             </div>
 
@@ -90,7 +90,7 @@ export default function Hero() {
             <div className="animate-on-load mt-6 flex flex-wrap gap-3">
               <a
                 href="#projects-section"
-                className="flex items-center gap-2 rounded-full bg-[#b8f04d] px-6 py-3.5 text-sm font-semibold text-[#0b140f] transition-colors hover:bg-[#c9fa5e]"
+                className="flex items-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-[#0b140f] transition-colors hover:bg-[#c9fa5e]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 View My Work
@@ -109,7 +109,7 @@ export default function Hero() {
               </a>
               <a
                 href="#booking-section"
-                className="rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:border-[#b8f04d] hover:text-[#b8f04d]"
+                className="rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:border-secondary hover:text-secondary"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Discuss a Project

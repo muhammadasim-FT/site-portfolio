@@ -101,7 +101,7 @@ export default function RingCapabilities() {
           {/* Header */}
           <div className="capabilities-header mb-16 max-w-lg">
             <p className="paragraph-title text-neutral-400">Technical depth</p>
-            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-black md:text-5xl">
+            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
               Capabilities, measured.
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-neutral-500">

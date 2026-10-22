@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="footer-grid grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
           {/* Left — newsletter */}
           <div>
-            <h2 className="font-heading text-4xl font-bold tracking-tight text-black md:text-5xl">
+            <h2 className="font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
               Stay in the know
             </h2>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">
@@ -160,7 +160,7 @@ export default function Footer() {
       {/* True bottom crop */}
       <div className="relative h-[20vw] w-full overflow-hidden">
         <p
-          className="footer-brand-text absolute -left-12 top-0 m-0 p-0 font-heading text-[32vw] font-bold leading-[0.9] tracking-[-0.06em] text-[#14261c] whitespace-nowrap"
+          className="footer-brand-text absolute -left-12 top-0 m-0 p-0 font-heading text-[32vw] font-bold leading-[0.9] tracking-[-0.06em] text-primary whitespace-nowrap"
           aria-hidden="true"
         >
           Lumenis

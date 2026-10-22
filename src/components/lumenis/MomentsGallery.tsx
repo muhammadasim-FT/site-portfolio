@@ -143,7 +143,7 @@ function GalleryOverlay({
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
               {project.category} - {project.year}
             </p>
-            <h3 className="mt-2 font-heading text-3xl font-bold tracking-tight text-black md:text-4xl">
+            <h3 className="mt-2 font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
               {project.title}
             </h3>
           </div>
@@ -273,7 +273,7 @@ export default function MomentsGallery() {
       {/* Header */}
       <div className="moments-header container mb-12 text-center">
         <p className="paragraph-title text-neutral-400">Selected moments</p>
-        <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-black md:text-5xl">
+        <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
           Project Gallery
         </h2>
         <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-neutral-500">

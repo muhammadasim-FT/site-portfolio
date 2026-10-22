@@ -31,7 +31,7 @@ export default function CtaBand() {
         {/* Action */}
         <a
           href="#contact-section"
-          className="group ml-auto flex shrink-0 items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:border-[#b8f04d] hover:text-[#b8f04d]"
+          className="group ml-auto flex shrink-0 items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:border-secondary hover:text-secondary"
         >
           Get In Touch
           <svg
