@@ -889,3 +889,169 @@ html.lenis body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* intro animation */
+
+.kinetic-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0b140f;
+  color: #f4f4f1;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* repeat visits / reduced motion skip the intro before first paint */
+html.intro-skip .kinetic-stage {
+  display: none !important;
+}
+
+/* hold the page behind the intro reel still */
+html.intro-lock {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+.kinetic-skip {
+  position: absolute;
+  z-index: 40;
+  top: clamp(18px, 3vw, 36px);
+  right: clamp(20px, 4vw, 56px);
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.08);
+  color: rgba(244, 244, 241, 0.65);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: background 0.25s, color 0.25s;
+}
+
+.kinetic-skip:hover {
+  background: #b8f04d;
+  color: #14261c;
+}
+
+.kinetic-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vw;
+  overflow: hidden;
+  text-align: center;
+  visibility: hidden;
+}
+
+.kinetic-text {
+  margin: 0;
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+  text-transform: lowercase;
+  will-change: transform, opacity, filter;
+}
+
+.kinetic-hero {
+  font-size: clamp(8rem, 29vw, 27rem);
+}
+
+.kinetic-normal {
+  font-size: clamp(3.5rem, 13vw, 12rem);
+}
+
+.kinetic-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.kinetic-support {
+  align-self: center;
+  margin-bottom: 0.12em;
+  font-size: clamp(2rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.kinetic-large {
+  font-size: clamp(5rem, 22vw, 20rem);
+  line-height: 0.82;
+  letter-spacing: -0.09em;
+  white-space: nowrap;
+}
+
+.kinetic-repeat .kinetic-text {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(4rem, 16vw, 15rem);
+}
+
+.repeat-fragment {
+  display: none;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+}
+
+.repeat-fragment:last-child {
+  letter-spacing: -0.075em;
+}
+
+.kinetic-logo {
+  position: absolute;
+  z-index: 10;
+  top: clamp(18px, 3vw, 36px);
+  left: clamp(20px, 4vw, 56px);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.kinetic-grain {
+  position: absolute;
+  z-index: 8;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 600px) {
+  .kinetic-scene {
+    padding: 5vw;
+  }
+
+  .kinetic-large {
+    font-size: clamp(4.5rem, 22vw, 9rem);
+  }
+
+  .kinetic-repeat .kinetic-text {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-grain {
+    display: none;
+  }
+
+  .kinetic-stage {
+    display: none;
+  }
+}

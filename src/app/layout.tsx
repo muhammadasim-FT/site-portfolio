@@ -35,8 +35,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${poppins.variable} ${oswald.variable} ${syne.variable} h-full antialiased`}
     >
+      <head>
+        {/* hide the intro before first paint for repeat visits / reduced motion */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem("lumenis-intro")==="1"||window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro-skip")}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-black">{children}</body>
     </html>
   );

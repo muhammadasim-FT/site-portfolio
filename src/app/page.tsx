@@ -18,6 +18,7 @@ import BookingCalendar from "@/components/lumenis/BookingCalendar";
 import CtaBand from "@/components/lumenis/CtaBand";
 import Testimonials from "@/components/lumenis/Testimonials";
 import Footer from "@/components/lumenis/Footer";
+import KineticTypography from "@/components/lumenis/KineticTypography";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,44 @@ export default function Home() {
         y: 0,
       });
       return () => lenis.destroy();
+    }
+
+    /* did this browser already see the kinetic intro this session? */
+    let introPlayed = false;
+    try {
+      introPlayed = sessionStorage.getItem("lumenis-intro") === "1";
+    } catch {
+      introPlayed = false;
+    }
+    const stageIntro = !introPlayed;
+
+    /* the intro lifts the curtain, then the hero lands */
+    const onIntroDone = () => {
+      gsap.fromTo(
+        ".navbar",
+        { y: "-100%" },
+        { y: 0, duration: 0.5, ease: "power3.out" }
+      );
+      gsap.fromTo(
+        ".navbar",
+        { backgroundColor: "rgba(11,20,15,0)" },
+        { backgroundColor: "rgba(11,20,15,0.95)", duration: 0.5 }
+      );
+      gsap.fromTo(
+        ".nav-link",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.25, delay: 0.2, stagger: 0.1 }
+      );
+      gsap.fromTo(
+        ".animate-on-load",
+        { y: 45, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.18, ease: "power3.out" }
+      );
+      ScrollTrigger.refresh();
+    };
+
+    if (stageIntro) {
+      window.addEventListener("kinetic:done", onIntroDone, { once: true });
     }
 
     const ctx = gsap.context(() => {
@@ -81,32 +120,34 @@ export default function Home() {
 
       intro.to(".intro-fade", { opacity: 0, duration: 0.5 }, 1.5);
 
-      /* ---------- animate-on-load ---------- */
-      gsap.fromTo(
-        ".animate-on-load",
-        { y: 65, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.3,
-          stagger: 0.35,
-        }
-      );
+      /* ---------- animate-on-load (replayed after the intro on first visit) ---------- */
+      if (!stageIntro) {
+        gsap.fromTo(
+          ".animate-on-load",
+          { y: 65, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: 0.3,
+            stagger: 0.35,
+          }
+        );
 
-      /* ---------- navbar ---------- */
-      gsap.fromTo(".navbar", { y: "-100%" }, { y: 0, duration: 0.5, delay: 0.94 });
-      gsap.fromTo(
-        ".navbar",
-        { backgroundColor: "rgba(11,20,15,0)" },
-        { backgroundColor: "rgba(11,20,15,0.95)", duration: 0.5, delay: 0.94 }
-      );
-      gsap.fromTo(
-        ".nav-link",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.2, delay: 1.16, stagger: 0.2 }
-      );
+        /* ---------- navbar ---------- */
+        gsap.fromTo(".navbar", { y: "-100%" }, { y: 0, duration: 0.5, delay: 0.94 });
+        gsap.fromTo(
+          ".navbar",
+          { backgroundColor: "rgba(11,20,15,0)" },
+          { backgroundColor: "rgba(11,20,15,0.95)", duration: 0.5, delay: 0.94 }
+        );
+        gsap.fromTo(
+          ".nav-link",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.2, delay: 1.16, stagger: 0.2 }
+        );
+      }
 
       /* ---------- scroll reveals ---------- */
       gsap.utils.toArray<HTMLElement>(".fade-in-on-scroll").forEach((el) => {
@@ -203,6 +244,7 @@ export default function Home() {
 
     return () => {
       clearTimeout(fallbackTimer);
+      window.removeEventListener("kinetic:done", onIntroDone);
       ctx.revert();
       lenis.destroy();
     };
@@ -222,6 +264,9 @@ export default function Home() {
         <div className="intro-cover absolute top-0 left-0 bg-white" />
         <div className="intro-cover-pair absolute top-0 left-0 w-1 h-1 bg-black" />
       </div>
+
+      {/* first-visit fullscreen intro (self-unmounts when done) */}
+      <KineticTypography />
 
       <Navbar />
       <div id="hero-section"><Hero /></div>
