@@ -12,56 +12,56 @@ const testimonials = [
       "The NERMS platform transformed how we coordinate emergency response across the nation. What used to take hours of phone calls now happens in seconds on a live map.",
     name: "Ahmed Hassan",
     company: "Rescue 1122",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/norms.jpg",
   },
   {
     quote:
       "ServiceFlow gave us a single pane of glass for our entire operation — leads, dispatch, invoicing, and revenue tracking all in one place. Our technician utilization jumped 40% in the first quarter.",
     name: "Sarah Mitchell",
     company: "Summit Home Services",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/serviceflow.jpg",
   },
   {
     quote:
       "Sift.ai's five-agent pipeline does in hours what used to take our team weeks. The quality of leads and personalized outreach drafts is indistinguishable from human work.",
     name: "Marcus Chen",
     company: "GrowthOps Agency",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/saftai.jpg",
   },
   {
     quote:
       "We asked for a simple REST API. They gave us clean, well-documented, AND scalable. They even got our team lead to say 'this is exactly what I wanted' — which they usually only say about coffee.",
     name: "James Okafor",
     company: "LogiTrack",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/zafora.jpg",
   },
   {
     quote:
       "They took our 'just make it faster' request and turned it into a proper caching strategy and query optimization plan. Wizards? Possibly. Engineers? Absolutely. Performance experts.",
     name: "Elena Rodriguez",
     company: "ChainGPT Labs",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/launhpad.jpg",
   },
   {
     quote:
       "They took our 'just make it work' deployment process and turned it into a proper CI/CD pipeline. Fewer rollbacks, fewer late nights, fewer 'works on my machine' excuses.",
     name: "David Kim",
     company: "StreamLine",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/marketplace.jpg",
   },
   {
     quote:
       "We gave them absolutely no direction, two contradictory tickets, and one half-faked architecture diagram — and somehow they made something clean and maintainable. They're either magic or just very patient.",
     name: "Engineering Manager",
     company: "Full-Stack Team",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/digiX.jpg",
   },
   {
     quote:
       "They understood our system's constraints better than we did. I'm pretty sure they read every line of our legacy code, mapped the dependencies, and came back with a plan. Hire them before a competitor does.",
     name: "CTO",
     company: "Startup",
-    avatar: "/assets/images/images/mockup1.jpg",
+    avatar: "/assets/images/gallery/aihub.jpg",
   },
 ];
 

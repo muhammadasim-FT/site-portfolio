@@ -15,6 +15,9 @@ const heroImages = [
   { seed: "/assets/images/gallery/aihub.jpg", alt: "ChainGPT AI Hub intelligence suite" },
   { seed: "/assets/images/gallery/nft.jpg", alt: "ChainGPT NFT generator" },
   { seed: "/assets/images/gallery/marketplace.jpg", alt: "CryptoSkope analytics platform" },
+  { seed: "/assets/images/gallery/alnasr.jpg", alt: "Al-Nasr Academy portal" },
+  { seed: "/assets/images/gallery/azura.jpg", alt: "Azura Luxury Yachts charter" },
+  { seed: "/assets/images/gallery/digiX.jpg", alt: "DigitX Agency website" },
 ];
 
 export default function Hero() {
@@ -22,7 +25,7 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden pt-24">
       {/* Background image grid */}
       <div className="image_wrap absolute inset-0">
-        <div className="grid h-full grid-cols-2 gap-1 opacity-0 transition-opacity duration-700 md:grid-cols-4 md:gap-1" id="hero-images">
+        <div className="grid h-full grid-cols-2 gap-4 transition-opacity duration-700 md:grid-cols-4 md:gap-1" id="hero-images">
           {heroImages.map((img, i) => (
             <div key={img.seed + i} className="content_img-wrap overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
