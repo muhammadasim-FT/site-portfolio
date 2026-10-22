@@ -78,13 +78,6 @@ export default function Home() {
 
       intro.to(".intro-fade", { opacity: 0, duration: 0.5 }, 1.5);
 
-      /* ---------- hero text ---------- */
-      gsap.fromTo(
-        ".logo-hero-text",
-        { y: 120, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power4.out", delay: 0.05 }
-      );
-
       /* ---------- animate-on-load ---------- */
       gsap.fromTo(
         ".animate-on-load",
@@ -103,8 +96,8 @@ export default function Home() {
       gsap.fromTo(".navbar", { y: "-100%" }, { y: 0, duration: 0.5, delay: 0.94 });
       gsap.fromTo(
         ".navbar",
-        { backgroundColor: "rgba(255,255,255,0)" },
-        { backgroundColor: "rgba(255,255,255,1)", duration: 0.5, delay: 0.94 }
+        { backgroundColor: "rgba(11,20,15,0)" },
+        { backgroundColor: "rgba(11,20,15,0.95)", duration: 0.5, delay: 0.94 }
       );
       gsap.fromTo(
         ".nav-link",

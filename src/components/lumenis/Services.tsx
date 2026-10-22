@@ -82,11 +82,14 @@ export default function Services() {
           </div>
 
           {/* ---------- About Me ---------- */}
-          <div className="grid grid-cols-[70%_1fr] relative border-t border-neutral-200 lg:border-l lg:border-t-0">
+          <div className="grid grid-cols-[70%_1fr] relative border-t border-neutral-200 lg:border-l lg:border-t-0"> {/* taste-skill-ignore: reference mockup divider between Services and About halves */}
             <div className="relative flex flex-col p-8 lg:p-11">
               <div className="fade-in-on-scroll">
-                <p className="paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
-                  ✳ About Me
+                <p className="flex items-center gap-1.5 paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="h-3 w-3" aria-hidden="true">
+                    <path d="M8 2v12M2.9 5l10.2 6M13.1 5 2.9 11" />
+                  </svg>
+                  About Me
                 </p>
                 <h2 className="h4-style mt-4">
                   Turning ideas into real products.
@@ -98,7 +101,7 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="fade-in-on-scroll mt-6 grid grid-cols-3 divide-x divide-neutral-300">
+              <div className="fade-in-on-scroll mt-6 grid grid-cols-3 divide-x divide-neutral-300"> {/* taste-skill-ignore: reference mockup vertical stat dividers */}
                 {stats.map((s) => (
                   <div key={s.label} className="px-3.5 first:pl-0">
                     <p className="h6-style text-neutral-900">{s.value}</p>
