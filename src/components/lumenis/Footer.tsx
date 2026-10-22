@@ -160,7 +160,7 @@ export default function Footer() {
       {/* True bottom crop */}
       <div className="relative h-[20vw] w-full overflow-hidden">
         <p
-          className="footer-brand-text absolute -left-12 top-0 m-0 p-0 font-heading text-[32vw] font-bold leading-[0.9] tracking-[-0.06em] text-black whitespace-nowrap"
+          className="footer-brand-text absolute -left-12 top-0 m-0 p-0 font-heading text-[32vw] font-bold leading-[0.9] tracking-[-0.06em] text-[#14261c] whitespace-nowrap"
           aria-hidden="true"
         >
           Lumenis
