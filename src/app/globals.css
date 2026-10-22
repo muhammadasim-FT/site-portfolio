@@ -6,8 +6,8 @@
   --color-alt: #ececec;
   --color-accent: #fffa8d;
   --color-line: #cccccc;
-  --font-heading: "Syne", "TASA Orbiter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: "Poppins", "TASA Orbiter", sans-serif;
+  --font-body: "Poppins", sans-serif;
   --font-logo: "Oswald Variable", "Oswald", Arial, sans-serif;
 }
 
@@ -441,6 +441,12 @@ body {
   border-radius: 8px;
 }
 
+/* ---------- services (compact text scale) ---------- */
+.services-card .h3-style { font-size: 38px; }
+.services-card .h4-style { font-size: 34px; }
+.services-card .h6-style { font-size: 21px; }
+.services-card .paragraph-title { font-size: 12.5px; }
+
 /* ---------- testimonials ---------- */
 .logo-animation-holder {
   overflow: hidden;
@@ -669,6 +675,18 @@ body {
   .partner-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .services-card .h3-style {
+    font-size: 25px;
+  }
+
+  .services-card .h4-style {
+    font-size: 20px;
+  }
+
+  .services-card .h6-style {
+    font-size: 14.5px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -694,6 +712,10 @@ body {
 
   .h6-style {
     font-size: 18px;
+  }
+
+  .services-card .h4-style {
+    font-size: 21.5px;
   }
 
   .testimonial-holder {
@@ -734,6 +756,18 @@ body {
 
   .partner-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-card .h3-style {
+    font-size: 21.5px;
+  }
+
+  .services-card .h4-style {
+    font-size: 18px;
+  }
+
+  .services-card .h6-style {
+    font-size: 14.5px;
   }
 }
 

@@ -50,29 +50,29 @@ export default function Services() {
   return (
     <section className="section">
       <div className="px-8">
-        <div className="grid overflow-hidden rounded-2xl lg:grid-cols-[40%_1fr]">
+        <div className="services-card grid overflow-hidden rounded-2xl lg:grid-cols-[40%_1fr]">
           {/* ---------- Services ---------- */}
-          <div className="fade-in-on-scroll p-10 lg:p-14">
+          <div className="fade-in-on-scroll p-8 lg:p-11">
             <p className="paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
               ‣ Services
             </p>
-            <h2 className="h3-style mt-5">What I Do</h2>
-            <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-neutral-600">
+            <h2 className="h3-style mt-4">What I Do</h2>
+            <p className="mt-4 max-w-sm text-[13.5px] leading-relaxed text-neutral-600">
               End-to-end development and cloud solutions tailored to your
               business needs.
             </p>
 
-            <div className="mt-10 grid gap-x-8 gap-y-9 sm:grid-cols-2">
+            <div className="mt-7 grid gap-x-6 gap-y-6 sm:grid-cols-2">
               {services.map((s) => (
-                <div key={s.name} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#e4ecdb] text-[#5d7f3a]">
+                <div key={s.name} className="flex items-start gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e4ecdb] text-[#5d7f3a]">
                     {s.icon}
                   </div>
                   <div>
-                    <h3 className="text-[15px] font-semibold text-neutral-900">
+                    <h3 className="text-[13.5px] font-semibold text-neutral-900">
                       {s.name}
                     </h3>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-neutral-500">
+                    <p className="mt-1 text-[11.5px] leading-relaxed text-neutral-500">
                       {s.description}
                     </p>
                   </div>
@@ -83,31 +83,31 @@ export default function Services() {
 
           {/* ---------- About Me ---------- */}
           <div className="grid grid-cols-[70%_1fr] relative border-t border-neutral-200 lg:border-l lg:border-t-0">
-            <div className="relative flex flex-col p-10 lg:p-14">
+            <div className="relative flex flex-col p-8 lg:p-11">
               <div className="fade-in-on-scroll">
                 <p className="paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
                   ✳ About Me
                 </p>
-                <h2 className="h4-style mt-5">
+                <h2 className="h4-style mt-4">
                   Turning ideas into real products.
                 </h2>
-                <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-neutral-600">
+                <p className="mt-4 max-w-xs text-[11.5px] leading-relaxed text-neutral-600">
                   I&apos;m a software engineer with a passion for building
                   scalable systems, solving complex problems, and creating
                   digital experiences that matter.
                 </p>
               </div>
 
-              <div className="fade-in-on-scroll mt-8 grid grid-cols-3 divide-x divide-neutral-300">
+              <div className="fade-in-on-scroll mt-6 grid grid-cols-3 divide-x divide-neutral-300">
                 {stats.map((s) => (
-                  <div key={s.label} className="px-4 first:pl-0">
+                  <div key={s.label} className="px-3.5 first:pl-0">
                     <p className="h6-style text-neutral-900">{s.value}</p>
-                    <p className="mt-1 text-xs text-neutral-500">{s.label}</p>
+                    <p className="mt-1 text-[11px] text-neutral-500">{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="fade-in-on-scroll mt-10">
+              <div className="fade-in-on-scroll mt-8">
                 <a href="#booking-section" className="button secondary">
                   <span className="button-text-holder">
                     <span className="button-text">Learn More</span>
@@ -138,7 +138,7 @@ export default function Services() {
 
               {/* handwritten note */}
               <p
-                className="absolute -bottom-1 right-2 z-10 rotate-[-6deg] text-lg text-neutral-800 lg:right-0"
+                className="absolute -bottom-1 right-2 z-10 rotate-[-6deg] text-[16px] text-neutral-800 lg:right-0"
                 style={{ fontFamily: "'Segoe Script', 'Brush Script MT', cursive" }}
               >
                 Better options,

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Oswald, Syne } from "next/font/google";
+import { Inter, Oswald, Poppins, Syne } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -29,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${oswald.variable} ${syne.variable} h-full antialiased`}
+      className={`${poppins.variable} ${oswald.variable} ${syne.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-black">{children}</body>
     </html>
