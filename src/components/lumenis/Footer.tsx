@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const columns = [
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const columns: { title: string; links: FooterLink[] }[] = [
   {
     title: "Navigate",
     links: [
@@ -28,10 +30,19 @@ const columns = [
   {
     title: "Profiles",
     links: [
-      { label: "GitHub", href: "https://github.com", external: true },
-      { label: "LinkedIn", href: "https://linkedin.com", external: true },
-      { label: "Twitter", href: "https://twitter.com", external: true },
-      { label: "Email", href: "mailto:hello@example.com" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/foxlancerr/", external: true },
+      { label: "GitHub", href: "https://github.com/foxlancerr", external: true },
+      { label: "Twitter (X)", href: "https://x.com/foxlancerr", external: true },
+      { label: "Instagram", href: "https://www.instagram.com/foxlancerr/", external: true },
+    ],
+  },
+  {
+    title: "Marketplaces",
+    links: [
+      { label: "Upwork", href: "https://www.upwork.com/freelancers/~01b77693cd51962916", external: true },
+      { label: "Fiverr", href: "https://www.fiverr.com/users/foxlancerr/", external: true },
+      { label: "Facebook", href: "https://www.facebook.com/foxlancerr", external: true },
+      { label: "Threads", href: "https://www.threads.net/@foxlancerr", external: true },
     ],
   },
 ];
@@ -108,7 +119,7 @@ export default function Footer() {
           </div>
 
           {/* Right — link columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {columns.map((col) => (
               <div key={col.title} className="footer-col">
                 <p className="text-xs font-medium uppercase tracking-[0.15em] text-neutral-400">
