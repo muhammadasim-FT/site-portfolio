@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       <div className="container">
-        <div className="navbar flex flex-col rounded-b-2xl px-2 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="navbar flex flex-col rounded-b-2xl px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Top row: brand + right cluster */}
           <div className="flex w-full items-center justify-between sm:w-full sm:justify-between sm:gap-4">
             {/* Brand */}
@@ -153,18 +153,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
               >
                 <span>{link.label}</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-3.5 w-3.5 opacity-60"
-                  aria-hidden="true"
-                >
-                  <path d="M9 6l6 6-6 6" />
-                </svg>
+               
               </a>
             ))}
 

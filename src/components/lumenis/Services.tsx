@@ -227,23 +227,23 @@ export default function Services() {
 
 
             {/* ---------- Portrait column ---------- */}
-            <div className="svc-portrait relative mt-6 flex justify-center lg:absolute lg:right-0 lg:bottom-10 lg:mt-0">
+            <div className="svc-portrait hidden sm:flex relative mt-6 justify-end lg:absolute lg:right-0 lg:bottom-10 lg:mt-0">
 
 
-              <div className="relative w-full">
+              <div className="relative ml-auto w-fit">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
 
                   src="/assets/images/profile/me2.png"
                   alt="Portrait"
                   loading="lazy"
-                  className="mx-auto h-[230px] w-auto object-contain sm:h-[300px] lg:h-[380px]"
+                  className="h-[230px] w-auto object-contain sm:h-[300px] lg:ml-0 lg:h-[380px]"
                 />
               </div>
 
               {/* handwritten note */}
               <p
-                className="absolute -bottom-1 right-2 z-10 rotate-[-6deg] text-[14px] text-neutral-800 lg:right-0 lg:text-[16px]"
+                className="absolute -bottom-1 right-20 z-10 rotate-[-6deg] text-[14px] text-neutral-800 lg:right-0 lg:text-[16px]"
                 style={{ fontFamily: "'Segoe Script', 'Brush Script MT', cursive" }}
               >
                 Better options,
