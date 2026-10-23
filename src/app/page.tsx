@@ -11,6 +11,7 @@ import Projects from "@/components/lumenis/Projects";
 import MomentsGallery from "@/components/lumenis/MomentsGallery";
 import Services from "@/components/lumenis/Services";
 import WhyWorkWithMe from "@/components/lumenis/WhyWorkWithMe";
+import Faq from "@/components/lumenis/Faq";
 import Benchmark from "@/components/lumenis/Benchmark";
 import ClientReviews from "@/components/lumenis/ClientReviews";
 import HowIWork from "@/components/lumenis/HowIWork";
@@ -276,15 +277,16 @@ export default function Home() {
       <HowIWork />
       <GitHubStats username="foxlancerr" />
       <Stack />
+      <WhyWorkWithMe />
       <div id="about-section"><About /></div>
       <div id="projects-section"><Projects /></div>
       <div id="gallery-section"><MomentsGallery /></div>
       <div id="benchmark-section"><Benchmark /></div>
       <div id="reviews-section"><ClientReviews /></div>
       <div id="booking-section"><BookingCalendar /></div>
-      <WhyWorkWithMe />
         <CtaBand />
       <div id="testimonials-section"><Testimonials /></div>
+      <Faq />
       <div id="contact-section"><Footer /></div>
     </div>
   );
