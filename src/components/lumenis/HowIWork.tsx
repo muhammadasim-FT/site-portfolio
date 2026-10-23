@@ -112,7 +112,7 @@ export default function HowIWork() {
               </div>
 
               {/* Steps */}
-              <ol className="process-steps mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
+              <ol className="process-steps mt-8 grid gap-x-8 gap-y-8 sm:mt-12 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-4">
                 {steps.map((s) => (
                   <li key={s.num} className="process-step">
                     <div className="flex items-center gap-3" aria-hidden="true">
@@ -144,7 +144,7 @@ export default function HowIWork() {
             </div>
 
             {/* CTA card */}
-            <aside className="process-card flex justify-center items-start flex-col rounded-2xl bg-[#132b1e] p-6 lg:p-8 h-[70%]">
+            <aside className="process-card flex justify-center items-start flex-col rounded-2xl bg-[#132b1e] p-6 lg:p-8 lg:h-[70%]">
               <p
                 className="text-[16px] font-semibold leading-snug text-white"
                 style={{ fontFamily: "var(--font-heading)" }}

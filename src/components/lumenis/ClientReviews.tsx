@@ -294,24 +294,24 @@ export default function ClientReviews() {
       <div className="section-spacing">
         <div className="container">
           {/* Header */}
-          <div className="reviews-header mb-16 text-center">
+          <div className="reviews-header mb-10 text-center sm:mb-16">
             <p className="paragraph-title text-neutral-400">Client reviews</p>
-            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
               What collaborators say
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-neutral-500">
+            <p className="mx-auto mt-4 max-w-md text-[13.5px] leading-relaxed text-neutral-500 sm:text-[15px]">
               Feedback from engineers, product managers, and founders I've built with.
             </p>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left — scrollable review list */}
             <div className="flex flex-col">
               {clientReviews.map((review, i) => (
                 <button
                   key={review.id}
                   onClick={() => handleOpen(review)}
-                  className={`review-item group border-b border-neutral-200 py-10 text-left transition-opacity duration-500 lg:py-12 ${
+                  className={`review-item group border-b border-neutral-200 py-7 text-left transition-opacity duration-500 sm:py-10 lg:py-12 ${
                     i === activeIndex ? "opacity-100" : "opacity-35"
                   }`}
                   aria-label={`Open review from ${review.client}`}

@@ -85,13 +85,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact-section" className="bg-[#fafafa] pt-24 pb-0">
+    <section ref={sectionRef} id="contact-section" className="bg-[#fafafa] pt-14 pb-0 sm:pt-24">
       <div className="container">
         {/* Top grid */}
         <div className="footer-grid grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
           {/* Left — newsletter */}
           <div>
-            <h2 className="font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
+            <h2 className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
               Stay in the know
             </h2>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">

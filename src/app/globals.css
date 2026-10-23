@@ -18,6 +18,8 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* keep decorative oversized elements from causing horizontal panning on mobile */
+  overflow-x: clip;
 }
 
 ::selection {
@@ -682,6 +684,74 @@ body {
   opacity: 0.2;
 }
 
+/* ---------- mobile menu (navbar) ---------- */
+.nav-mobile-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.nav-mobile-button:hover,
+.nav-mobile-button[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.nav-mobile-panel {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 8px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  animation: nav-menu-in 0.28s ease both;
+}
+
+.nav-mobile-panel .nav-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: #c7d8cd;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-mobile-panel .nav-mobile-link:hover,
+.nav-mobile-panel .nav-mobile-link.active {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-accent);
+}
+
+@keyframes nav-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-mobile-button {
+    display: flex;
+  }
+
+  .nav-mobile-panel.open {
+    display: flex;
+  }
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 991px) {
   .h1-style {
@@ -822,6 +892,83 @@ body {
 
   .services-card .h6-style {
     font-size: 14.5px;
+  }
+}
+
+/* ---------- small screens: tighter rhythm, same look ---------- */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-spacing {
+    padding: 42px 0;
+  }
+
+  .testimonial-holder {
+    margin-top: 28px;
+    gap: 16px;
+  }
+
+  .testimonial-item {
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .testimonial-item p {
+    font-size: 14.5px;
+  }
+
+  .project-main-wrapper {
+    padding: 30px 0;
+    gap: 20px;
+  }
+
+  .partner {
+    padding: 26px 16px;
+    min-height: 90px;
+  }
+
+  .logo-animation-holder {
+    padding: 20px 0;
+  }
+
+  .button {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+
+  .footer-brand-text {
+    font-size: 40vw;
+    left: -8px;
+  }
+}
+
+/* ---------- touch devices: hover-only reveals must still be visible ---------- */
+@media (hover: none) {
+  /* gallery cards: always show the caption instead of hover-only */
+  .marquee-track button .gallery-caption {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .marquee-track button .gallery-shade {
+    opacity: 1 !important;
+  }
+
+  /* project rows: keep the subtle shade visible */
+  .project-link-wrapper .overlay {
+    opacity: 0.6;
+  }
+
+  .project-main-image-holderr .discover {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 60%);
+  }
+
+  .project-link-wrapper .project-image,
+  .project-main-image-holderr .project-main-image {
+    transform: none;
   }
 }
 

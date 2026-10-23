@@ -206,7 +206,7 @@ export default function BookingCalendar() {
                 Discuss your project, ask questions, or just say hello.
               </p>
 
-              <div className="mt-9 flex flex-wrap gap-x-8 gap-y-5">
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-5 sm:gap-x-8 sm:mt-9">
                 {features.map((f) => (
                   <div key={f.title} className="flex items-start gap-3">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-secondary">
@@ -222,9 +222,9 @@ export default function BookingCalendar() {
             </div>
 
             {/* ---------- Right: calendar composition ---------- */}
-            <div className="booking-card grid grid-cols-[1fr_260px] gap-6 items-center relative fade-in-on-scroll flex-1">
+            <div className="booking-card relative grid flex-1 grid-cols-1 items-center gap-6 fade-in-on-scroll sm:grid-cols-[1fr_260px]">
               {/* white calendar card */}
-              <div className="rounded-2xl bg-white p-5 shadow-[0_30px_70px_rgba(20,38,28,0.14)]"> {/* taste-skill-ignore: floating mock card over the band */}
+              <div className="rounded-2xl bg-white p-4 shadow-[0_30px_70px_rgba(20,38,28,0.14)] sm:p-5"> {/* taste-skill-ignore: floating mock card over the band */}
                 <div className="grid gap-6 sm:grid-cols-[1fr_100px]">
                   {/* mini month calendar */}
                   <div>
@@ -302,7 +302,7 @@ export default function BookingCalendar() {
                   </div>
 
                   {/* time slot list */}
-                  <div className="flex flex-col gap-1.5 sm:rounded-xl sm:px-2 sm:py-1.5">
+                  <div className="mt-2 grid grid-cols-3 gap-1.5 sm:mt-0 sm:flex sm:flex-col sm:rounded-xl sm:px-2 sm:py-1.5">
                     {TIME_SLOTS.map((time) => {
                       const isSelected = selectedTime === time;
                       return (

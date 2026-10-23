@@ -47,7 +47,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-svh overflow-hidden bg-[#0b140f] pt-28 text-white">
+    <section className="relative min-h-svh overflow-hidden bg-[#0b140f] pt-24 text-white sm:pt-28">
       {/* faint bird decorations */}
       <svg
         viewBox="0 0 64 32"
@@ -62,7 +62,7 @@ export default function Hero() {
       </svg>
 
       <div className="container relative z-10">
-        <div className="grid min-h-[calc(100vh-8rem)] items-center gap-14 pb-16 lg:grid-cols-[43%_1fr]">
+        <div className="grid min-h-[calc(100svh-8rem)] items-center gap-10 pb-12 sm:gap-14 sm:pb-16 lg:grid-cols-[43%_1fr]">
           {/* ---------- Left: copy ---------- */}
           <div className="max-w-xl">
             <div className="animate-on-load flex items-center gap-3">
@@ -70,27 +70,28 @@ export default function Hero() {
               <p className="text-[13px] text-[#c7d8cd]">Software Engineer &amp; Digital Builder</p>
             </div>
 
-            <div className="animate-on-load mt-5">
+            <div className="animate-on-load mt-4 sm:mt-5">
               <h1
-                className="text-white text-[clamp(38px,4vw,56px)] font-medium leading-[1.04] tracking-[-0.03em]"
+                className="text-white text-[clamp(31px,7.5vw,56px)] font-medium leading-[1.06] tracking-[-0.03em] sm:text-[clamp(38px,4vw,56px)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                I build digital products that help businesses <br></br> <em className="italic text-secondary">grow.</em>
+                I build digital products that help businesses <br className="hidden sm:block"></br>{" "}
+                <em className="italic text-secondary">grow.</em>
               </h1>
             </div>
 
-            <div className="animate-on-load mt-6">
-              <p className="max-w-md text-[15px] leading-relaxed text-[#9db4a6]">
+            <div className="animate-on-load mt-5 sm:mt-6">
+              <p className="max-w-md text-[14px] leading-relaxed text-[#9db4a6] sm:text-[15px]">
                 Full-stack development, AI automation, DevOps &amp; Cloud, and Web3
                 solutions — turning ideas into scalable products that create
                 real value.
               </p>
             </div>
 
-            <div className="animate-on-load mt-6 flex flex-wrap gap-3">
+            <div className="animate-on-load mt-5 flex flex-wrap gap-3 sm:mt-6">
               <a
                 href="#projects-section"
-                className="flex items-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-[#0b140f] transition-colors hover:bg-[#c9fa5e]"
+                className="flex items-center gap-2 rounded-full bg-secondary px-5 py-3 text-[13.5px] font-semibold text-[#0b140f] transition-colors hover:bg-[#c9fa5e] sm:px-6 sm:py-3.5 sm:text-sm"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 View My Work
@@ -109,7 +110,7 @@ export default function Hero() {
               </a>
               <a
                 href="#booking-section"
-                className="rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:border-secondary hover:text-secondary"
+                className="rounded-full border border-white/25 px-5 py-3 text-[13.5px] font-medium text-white transition-colors hover:border-secondary hover:text-secondary sm:px-6 sm:py-3.5 sm:text-sm"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Discuss a Project
@@ -117,7 +118,7 @@ export default function Hero() {
             </div>
 
             {/* capability checklist */}
-            <div className="animate-on-load mt-6 flex flex-wrap gap-x-4 gap-y-3">
+            <div className="animate-on-load mt-5 flex flex-wrap gap-x-4 gap-y-2.5 sm:mt-6 sm:gap-y-3">
               {checklist.map((item) => (
                 <span key={item} className="flex items-center gap-2 text-[13px] text-[#c7d8cd]">
                   <svg

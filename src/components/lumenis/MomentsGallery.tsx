@@ -268,17 +268,16 @@ export default function MomentsGallery() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#fafafa] py-24"
+      className="relative overflow-hidden bg-[#fafafa] py-16 sm:py-24"
     >
       {/* Header */}
-      <div className="moments-header container mb-12 text-center">
+      <div className="moments-header container mb-8 text-center sm:mb-12">
         <p className="paragraph-title text-neutral-400">Selected moments</p>
-        <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-primary md:text-5xl">
+        <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
           Project Gallery
         </h2>
-        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-neutral-500">
-          A floating collection of projects. Move your cursor through the gallery —
-          each one responds. Click to explore the details.
+        <p className="mx-auto mt-4 max-w-md text-[13.5px] leading-relaxed text-neutral-500 sm:text-[15px]">
+          A floating collection of projects. Tap or click any card to explore the details.
         </p>
       </div>
 
@@ -371,10 +370,10 @@ const GalleryCard = forwardRef<
           (e.target as HTMLImageElement).style.opacity = "1";
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        <p className="text-sm font-semibold text-white">{project.title}</p>
-        <p className="text-xs text-white/70">{project.category} - {project.year}</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 gallery-shade" />
+      <div className="gallery-caption absolute bottom-0 left-0 right-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <p className="text-[13px] font-semibold text-white sm:text-sm">{project.title}</p>
+        <p className="text-[11px] text-white/70 sm:text-xs">{project.category} - {project.year}</p>
       </div>
     </button>
   );

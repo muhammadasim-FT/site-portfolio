@@ -67,19 +67,19 @@ export default function Benchmark() {
     <section ref={sectionRef} className="section bg-[#f4f4f2]">
       <div className="section-spacing">
         <div className="container">
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
             {/* Left — sticky stat */}
             <div className="lg:sticky lg:top-32 self-start">
               <p className="paragraph-title text-neutral-400">Up to</p>
               <div className="mt-2 flex items-start overflow-hidden">
                 <span
                   ref={statRef}
-                  className="font-heading text-[clamp(72px,10vw,140px)] font-bold leading-none tracking-tight text-primary"
+                  className="font-heading text-[clamp(56px,14vw,140px)] font-bold leading-none tracking-tight text-primary sm:text-[clamp(72px,10vw,140px)]"
                 >
                   12x
                 </span>
               </div>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">
+              <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-neutral-500 sm:text-sm">
                 Faster delivery than traditional development workflows, without
                 compromising on code quality or system reliability.
               </p>
@@ -90,14 +90,14 @@ export default function Benchmark() {
               {metrics.map((m, i) => (
                 <div
                   key={m.label}
-                  className={`benchmark-item border-b border-[#e0e0de] py-10 lg:py-12 transition-opacity duration-500 ${
+                  className={`benchmark-item border-b border-[#e0e0de] py-7 sm:py-10 lg:py-12 transition-opacity duration-500 ${
                     i === activeIndex
                       ? "opacity-100"
                       : "opacity-35"
                   }`}
                 >
                   <p
-                    className={`font-heading text-[clamp(20px,2.5vw,28px)] font-semibold tracking-tight transition-colors duration-500 ${
+                    className={`font-heading text-[clamp(17px,4.5vw,28px)] font-semibold tracking-tight transition-colors duration-500 sm:text-[clamp(20px,2.5vw,28px)] ${
                       i === activeIndex ? "text-black" : "text-neutral-400"
                     }`}
                   >

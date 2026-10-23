@@ -144,10 +144,10 @@ export default function Services() {
 
   return (
     <section ref={sectionRef} className="section">
-      <div className="px-8">
+      <div className="px-4 sm:px-8">
         <div className="services-card grid overflow-hidden rounded-2xl lg:grid-cols-[40%_1fr]">
           {/* ---------- Services ---------- */}
-          <div className="p-8 lg:p-11">
+          <div className="py-8 lg:p-11">
             <p className="svc-fade paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
               ‣ Services
             </p>
@@ -177,8 +177,8 @@ export default function Services() {
           </div>
 
           {/* ---------- About Me ---------- */}
-          <div className="grid grid-cols-[70%_1fr] relative border-t border-neutral-200 lg:border-l lg:border-t-0"> {/* taste-skill-ignore: reference mockup divider between Services and About halves */}
-            <div className="relative flex flex-col p-8 lg:p-11">
+          <div className="grid grid-cols-1 relative border-t border-neutral-200 lg:grid-cols-[70%_1fr] lg:border-l lg:border-t-0"> {/* taste-skill-ignore: reference mockup divider between Services and About halves */}
+            <div className="relative flex flex-col py-8 lg:p-11">
               <div className="svc-copy">
                 <p className="flex items-center gap-1.5 paragraph-title text-xs uppercase tracking-[0.18em] text-neutral-500">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="h-3 w-3" aria-hidden="true">
@@ -198,7 +198,7 @@ export default function Services() {
 
               <div className="svc-stats mt-6 grid grid-cols-3 divide-x divide-neutral-300"> {/* taste-skill-ignore: reference mockup vertical stat dividers */}
                 {stats.map((s) => (
-                  <div key={s.label} className="px-3.5 first:pl-0">
+                  <div key={s.label} className="px-2.5 first:pl-0 sm:px-3.5">
                     <p
                       className="stat-value h6-style text-neutral-900"
                       data-target={s.value}
@@ -207,7 +207,7 @@ export default function Services() {
                       {s.value}
                       {s.suffix}
                     </p>
-                    <p className="mt-1 text-[11px] text-neutral-500">{s.label}</p>
+                    <p className="mt-1 text-[9.5px] text-neutral-500 sm:text-[11px]">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -227,7 +227,7 @@ export default function Services() {
 
 
             {/* ---------- Portrait column ---------- */}
-            <div className="svc-portrait flex h-auto absolute bottom-10 right-0">
+            <div className="svc-portrait relative mt-6 flex justify-center lg:absolute lg:right-0 lg:bottom-10 lg:mt-0">
 
 
               <div className="relative w-full">
@@ -237,13 +237,13 @@ export default function Services() {
                   src="/assets/images/profile/me2.png"
                   alt="Portrait"
                   loading="lazy"
-                  className="h-[380px] w-auto object-contain"
+                  className="mx-auto h-[230px] w-auto object-contain sm:h-[300px] lg:h-[380px]"
                 />
               </div>
 
               {/* handwritten note */}
               <p
-                className="absolute -bottom-1 right-2 z-10 rotate-[-6deg] text-[16px] text-neutral-800 lg:right-0"
+                className="absolute -bottom-1 right-2 z-10 rotate-[-6deg] text-[14px] text-neutral-800 lg:right-0 lg:text-[16px]"
                 style={{ fontFamily: "'Segoe Script', 'Brush Script MT', cursive" }}
               >
                 Better options,
