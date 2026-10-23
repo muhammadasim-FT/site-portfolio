@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald, Poppins, Syne } from "next/font/google";
 import "./globals.css";
+import { brandName } from "@/constants/config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,9 +27,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Lumenis — Software Engineer",
+  title: `${brandName} — Software Engineer`,
   description:
-    "Personal portfolio of Lumenis, a software engineer specializing in full-stack development, cloud infrastructure, and API design.",
+    `Personal portfolio of ${brandName}, a software engineer specializing in full-stack development, cloud infrastructure, and API design.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

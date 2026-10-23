@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { brandName } from "@/constants/config";
 
 /* theme palette */
 const DARK = "#0b140f";
@@ -149,7 +150,7 @@ export default function KineticTypography() {
   return (
     <section ref={stageRef} className="kinetic-stage" aria-label="Intro animation" role="presentation">
       <div className="kinetic-logo" aria-hidden="true">
-        Lumenis.
+        {brandName}.
       </div>
 
       <button type="button" className="kinetic-skip" onClick={() => stageRef.current?.dispatchEvent(new Event("kinetic:skip"))}>

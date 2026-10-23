@@ -1,3 +1,5 @@
+import { brandName } from "@/constants/config";
+
 export default function CtaBand() {
   return (
     <section className="bg-[#0b140f]">
@@ -9,7 +11,7 @@ export default function CtaBand() {
           className="shrink-0 leading-none text-white transition-opacity hover:opacity-80"
           style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(56px, 8vw, 104px)", fontWeight: 600, letterSpacing: "-0.06em" }}
         >
-          Lumenis
+          {brandName}
         </a>
 
         {/* Statement */}

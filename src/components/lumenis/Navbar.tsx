@@ -1,5 +1,6 @@
 "use client";
 
+import { brandName } from "@/constants/config";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -40,14 +41,14 @@ export default function Navbar() {
             <a
               href="#hero-section"
               className="brand text-white"
-              aria-label="Lumenis home"
+              aria-label={`${brandName} home`}
               onClick={() => setOpen(false)}
             >
               <span
                 className="text-lg font-bold tracking-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Lumenis
+                {brandName}
               </span>
             </a>
 

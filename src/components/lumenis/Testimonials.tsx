@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { brandName } from "@/constants/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,16 +103,16 @@ export default function Testimonials() {
               {/* Repeating logo animation */}
               <div className="logo-animation-holder">
                 <div className="logo-animation-half _1">
-                  <div className="logo-text">Lumenis</div>
+                  <div className="logo-text">{brandName}</div>
                 </div>
                 <div className="logo-animation-half _2">
-                  <div className="logo-text">Lumenis</div>
+                  <div className="logo-text">{brandName}</div>
                 </div>
                 <div className="logo-animation-half _3">
-                  <div className="logo-text">Lumenis</div>
+                  <div className="logo-text">{brandName}</div>
                 </div>
                 <div className="logo-animation-full">
-                  <div className="logo-text">Lumenis</div>
+                  <div className="logo-text">{brandName}</div>
                 </div>
               </div>
             </div>
