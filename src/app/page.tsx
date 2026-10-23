@@ -272,8 +272,8 @@ export default function Home() {
       <Navbar />
       <div id="hero-section"><Hero /></div>
       <div id="services-section"><Services /></div>
-      <GitHubStats username="foxlancerr" />
       <HowIWork />
+      <GitHubStats username="foxlancerr" />
       <div id="about-section"><About /></div>
       <div id="projects-section"><Projects /></div>
       <div id="gallery-section"><MomentsGallery /></div>
