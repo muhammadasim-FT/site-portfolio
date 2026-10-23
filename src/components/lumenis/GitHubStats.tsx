@@ -367,8 +367,8 @@ export default function GitHubStats({ username }: { username: string }) {
   const pointerFine = isRender && window.matchMedia("(pointer: fine)").matches;
 
   return (
-    <section ref={sectionRef} className="section">
-      <div className="container section-spacing">
+    <section ref={sectionRef} className="section section-spacing">
+      <div className="container">
         <div className="gh-graph relative" ref={graphBoxRef}>
           {/* month labels — same column template, so alignment always holds */}
           <div className="grid gap-[2px] sm:gap-[3px]" style={{ gridTemplateColumns: columns }}>
