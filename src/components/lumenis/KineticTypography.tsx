@@ -20,6 +20,7 @@ type Scene = {
 
 /* "we don't just code — we build … impact." */
 const scenes: Scene[] = [
+  { text: "پخیر راغلې", bg: DARK, color: CREAM, size: "normal" },
   { text: "we", bg: DARK, color: CREAM, size: "hero" },
   { support: "we don't", large: "just code", bg: DARK, color: CREAM, size: "stacked" },
   { text: "we", bg: DARK, color: LIME, size: "hero" },
