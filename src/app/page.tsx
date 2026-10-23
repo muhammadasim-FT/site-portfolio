@@ -19,6 +19,7 @@ import CtaBand from "@/components/lumenis/CtaBand";
 import Testimonials from "@/components/lumenis/Testimonials";
 import Footer from "@/components/lumenis/Footer";
 import KineticTypography from "@/components/lumenis/KineticTypography";
+import GitHubStats from "@/components/lumenis/GitHubStats";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -271,7 +272,7 @@ export default function Home() {
       <Navbar />
       <div id="hero-section"><Hero /></div>
       <div id="services-section"><Services /></div>
-      
+      <GitHubStats username="foxlancerr" />
       <HowIWork />
       <div id="about-section"><About /></div>
       <div id="projects-section"><Projects /></div>

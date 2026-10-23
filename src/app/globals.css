@@ -1055,3 +1055,32 @@ html.intro-lock {
     display: none;
   }
 }
+
+/* contribution graph — a lime pulse marks today's cell */
+@keyframes gh-today-pulse {
+  0% {
+    box-shadow:
+      0 0 0 1.5px rgba(184, 240, 77, 0.95),
+      0 0 0 2.5px rgba(184, 240, 77, 0.4);
+  }
+  70% {
+    box-shadow:
+      0 0 0 1.5px rgba(184, 240, 77, 0.95),
+      0 0 0 6px rgba(184, 240, 77, 0);
+  }
+  100% {
+    box-shadow:
+      0 0 0 1.5px rgba(184, 240, 77, 0.95),
+      0 0 0 0 rgba(184, 240, 77, 0);
+  }
+}
+
+.gh-today {
+  animation: gh-today-pulse 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-today {
+    animation: none;
+  }
+}
