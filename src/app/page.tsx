@@ -12,6 +12,7 @@ import MomentsGallery from "@/components/lumenis/MomentsGallery";
 import Services from "@/components/lumenis/Services";
 import WhyWorkWithMe from "@/components/lumenis/WhyWorkWithMe";
 import Faq from "@/components/lumenis/Faq";
+import Blog from "@/components/lumenis/Blog";
 import Benchmark from "@/components/lumenis/Benchmark";
 import ClientReviews from "@/components/lumenis/ClientReviews";
 import HowIWork from "@/components/lumenis/HowIWork";
@@ -287,6 +288,7 @@ export default function Home() {
         <CtaBand />
       <div id="testimonials-section"><Testimonials /></div>
       <Faq />
+      <Blog />
       <div id="contact-section"><Footer /></div>
     </div>
   );
